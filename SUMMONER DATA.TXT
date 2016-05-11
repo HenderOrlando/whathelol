@@ -1,0 +1,10 @@
+SUMMONER DATA
+Date: Fri, 26 Feb 2016 17:28:00 GMT
+-----------------------------------
+{"645104": {
+   "id": 645104,
+   "name": "whathelol",
+   "profileIconId": 715,
+   "revisionDate": 1456436819000,
+   "summonerLevel": 30
+}}

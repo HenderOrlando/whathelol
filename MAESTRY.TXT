@@ -1,0 +1,1180 @@
+MAESTRY
+Date: Fri, 26 Feb 2016 17:14:26 GMT
+-----------------------------------
+{
+   "tree": {
+      "Ferocity": [
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6111
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6114
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6121
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6122
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6123
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6131
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6134
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6141
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6142
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6151
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6154
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6161
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6162
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6164
+            }
+         ]}
+      ],
+      "Cunning": [
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6311
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6312
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6321
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6322
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6323
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6331
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6332
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6342
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6343
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6351
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6352
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6361
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6362
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6363
+            }
+         ]}
+      ],
+      "Resolve": [
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6211
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6212
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6221
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6223
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6231
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6232
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6241
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6242
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6251
+            },
+            null,
+            {
+               "prereq": "0",
+               "masteryId": 6252
+            }
+         ]},
+         {"masteryTreeItems": [
+            {
+               "prereq": "0",
+               "masteryId": 6261
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6262
+            },
+            {
+               "prereq": "0",
+               "masteryId": 6263
+            }
+         ]}
+      ]
+   },
+   "data": {
+      "6121": {
+         "ranks": 1,
+         "id": 6121,
+         "sanitizedDescription": ["Cuerpo a cuerpo: inflige un 3% de daño adicional y recibe un 1,5% de daño adicional. A distancia: inflige y recibe un 2% de daño adicional."],
+         "description": ["Cuerpo a cuerpo: inflige un 3% de daño adicional y recibe un 1,5% de daño adicional.<br><br>A distancia: inflige y recibe un 2% de daño adicional."],
+         "name": "Espada de doble filo",
+         "image": {
+            "w": 48,
+            "full": "6121.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 240
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6122": {
+         "ranks": 1,
+         "id": 6122,
+         "sanitizedDescription": ["Matar a una unidad restaura 20 de vida (25 segundos de enfriamiento)."],
+         "description": ["Matar a una unidad restaura 20 de vida (25 segundos de enfriamiento)."],
+         "name": "Festín",
+         "image": {
+            "w": 48,
+            "full": "6122.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 288
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6261": {
+         "ranks": 1,
+         "id": 6261,
+         "sanitizedDescription": ["Cada 4 segundos de combate, tu siguiente ataque contra un campeón enemigo le robará una cantidad de vida equivalente a un 3% de tu vida máxima (la mitad para campeones a distancia, inflige daño mágico)."],
+         "description": ["Cada 4 segundos de combate, tu siguiente ataque contra un campeón enemigo le robará una cantidad de vida equivalente a un 3% de tu vida máxima (la mitad para campeones a distancia, inflige daño mágico)."],
+         "name": "Garras del inmortal",
+         "image": {
+            "w": 48,
+            "full": "6261.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 336
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6123": {
+         "ranks": 1,
+         "id": 6123,
+         "sanitizedDescription": ["Infligir daño a los campones enemigos hace que reciban un 3% más de daño de tus aliados."],
+         "description": ["Infligir daño a los campones enemigos hace que reciban un 3% más de daño de tus aliados."],
+         "name": "Ataque al punto débil",
+         "image": {
+            "w": 48,
+            "full": "6123.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 336
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6141": {
+         "ranks": 1,
+         "id": 6141,
+         "sanitizedDescription": ["Inflige un 1% de daño adicional por cada campeón enemigo que elimines por primera vez."],
+         "description": ["Inflige un 1% de daño adicional por cada campeón enemigo que elimines por primera vez."],
+         "name": "Cazarrecompensas",
+         "image": {
+            "w": 48,
+            "full": "6141.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 432
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6142": {
+         "ranks": 1,
+         "id": 6142,
+         "sanitizedDescription": ["Inflige un 2,5% de daño adicional a los objetivos con movimiento reducido (ralentizados, aturdidos, paralizados, provocados, etc.)."],
+         "description": ["Inflige un 2,5% de daño adicional a los objetivos con movimiento reducido (ralentizados, aturdidos, paralizados, provocados, etc.)."],
+         "name": "Opresor",
+         "image": {
+            "w": 48,
+            "full": "6142.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 0
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6162": {
+         "ranks": 1,
+         "id": 6162,
+         "sanitizedDescription": ["Generas acumulaciones de Fervor al golpear a los campeones enemigos con ataques o habilidades. Los ataques básicos infligen 1-14 de daño físico adicional (según el nivel) a los campeones enemigos por cada acumulación de Fervor (máximo 8 acumulaciones). Al atacar a los campeones enemigos se genera 1 acumulación de Fervor (2 para los campeones cuerpo a cuerpo) y dañar a los campeones enemigos con una habilidad genera 2 acumulaciones de Fervor (2 segundos de enfriamiento). Las acumulaciones de Fervor duran 6 segundos."],
+         "description": ["Generas acumulaciones de Fervor al golpear a los campeones enemigos con ataques o habilidades. Los ataques básicos infligen 1-14 de daño físico adicional (según el nivel) a los campeones enemigos por cada acumulación de Fervor (máximo 8 acumulaciones).<br><br>Al atacar a los campeones enemigos se genera 1 acumulación de Fervor (2 para los campeones cuerpo a cuerpo) y dañar a los campeones enemigos con una habilidad genera 2 acumulaciones de Fervor (2 segundos de enfriamiento). Las acumulaciones de Fervor duran 6 segundos."],
+         "name": "Fervor de combate",
+         "image": {
+            "w": 48,
+            "full": "6162.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 192
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6161": {
+         "ranks": 1,
+         "id": 6161,
+         "sanitizedDescription": ["Obtienes robo de vida en aumento en función de la vida que te falte contra campeones (hasta un 20%). Contra súbditos supone un 50% de beneficio."],
+         "description": ["Obtienes robo de vida en aumento en función de la vida que te falte contra campeones (hasta un 20%). Contra súbditos supone un 50% de beneficio."],
+         "name": "Sed de sangre del señor de la guerra",
+         "image": {
+            "w": 48,
+            "full": "6161.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 144
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6164": {
+         "ranks": 1,
+         "id": 6164,
+         "sanitizedDescription": ["Tus habilidades de daño hacen que los campeones enemigos sufran un daño mágico igual a 8 + 60% de tu daño de ataque adicional y un 25% de tu poder de habilidad durante 4 segundos. Toque de muerte ígnea tiene una efectividad reducida al aplicarse con habilidades de área de efecto y de daño prolongado en el tiempo. - Área de efecto: 2 segundos de duración. - Daño prolongado en el tiempo: 1 segundo de duración."],
+         "description": ["Tus habilidades de daño hacen que los campeones enemigos sufran un daño mágico igual a 8 + 60% de tu daño de ataque adicional y un 25% de tu poder de habilidad durante 4 segundos.<br><br>Toque de muerte ígnea tiene una efectividad reducida al aplicarse con habilidades de área de efecto y de daño prolongado en el tiempo.<br>     - Área de efecto: 2 segundos de duración. <br>     - Daño prolongado en el tiempo: 1 segundo de duración."],
+         "name": "Toque de muerte ígnea",
+         "image": {
+            "w": 48,
+            "full": "6164.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 240
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6323": {
+         "ranks": 1,
+         "id": 6323,
+         "sanitizedDescription": ["Inflige un 2% de daño adicional cuando no haya campeones aliados cerca."],
+         "description": ["Inflige un 2% de daño adicional cuando no haya campeones aliados cerca."],
+         "name": "Asesino",
+         "image": {
+            "w": 48,
+            "full": "6323.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 288
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6342": {
+         "ranks": 1,
+         "id": 6342,
+         "sanitizedDescription": ["Obtienes 1 de oro por cada súbdito cercano que sea eliminado por un aliado. Obtienes 3 de oro (10 para campeones cuerpo a cuerpo) al golpear a un campeón enemigo con un ataque básico (5 segundos de enfriamiento)."],
+         "description": ["Obtienes 1 de oro por cada súbdito cercano que sea eliminado por un aliado. <br><br>Obtienes 3 de oro (10 para campeones cuerpo a cuerpo) al golpear a un campeón enemigo con un ataque básico (5 segundos de enfriamiento)."],
+         "name": "Bandido",
+         "image": {
+            "w": 48,
+            "full": "6342.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 288
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6241": {
+         "ranks": 1,
+         "id": 6241,
+         "sanitizedDescription": ["Reduce el enfriamiento de los hechizos de invocador un 15%."],
+         "description": ["Reduce el enfriamiento de los hechizos de invocador un 15%."],
+         "name": "Perspicacia",
+         "image": {
+            "w": 48,
+            "full": "6241.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 144
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6242": {
+         "ranks": 1,
+         "id": 6242,
+         "sanitizedDescription": ["+50% de regeneración de vida básica, que aumenta a +200% al tener menos del 25% de vida."],
+         "description": ["+50% de regeneración de vida básica, que aumenta a +200% al tener menos del 25% de vida."],
+         "name": "Perseverancia",
+         "image": {
+            "w": 48,
+            "full": "6242.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 192
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6321": {
+         "ranks": 1,
+         "id": 6321,
+         "sanitizedDescription": ["Las mejoras de los monstruos neutrales duran un 15% más."],
+         "description": ["Las mejoras de los monstruos neutrales duran un 15% más."],
+         "name": "Afinidad rúnica",
+         "image": {
+            "w": 48,
+            "full": "6321.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 96
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6322": {
+         "ranks": 1,
+         "id": 6322,
+         "sanitizedDescription": ["Las pociones y elixires duran un 10% más de tiempo. Tus pociones de vida se reemplazan por galletas que restauran 20 de vida y 10 de maná nada más consumirlas."],
+         "description": [" Las pociones y elixires duran un 10% más de tiempo.<br><br>Tus pociones de vida se reemplazan por galletas que restauran 20 de vida y 10 de maná nada más consumirlas."],
+         "name": "Alijo secreto",
+         "image": {
+            "w": 48,
+            "full": "6322.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 144
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6262": {
+         "ranks": 1,
+         "id": 6262,
+         "sanitizedDescription": ["Los monstruos gigantes y los súbditos de asedio a los que matéis los campeones aliados cercanos o tú, otorgarán un aumento de vida permanente de 20 y 10 respectivamente (300 como máximo). Tras alcanzar el límite máximo, las muertes de súbditos de asedio restaurarán un 6% de la vida máxima."],
+         "description": ["Los monstruos gigantes y los súbditos de asedio a los que matéis los campeones aliados cercanos o tú, otorgarán un aumento de vida permanente de 20 y 10 respectivamente (300 como máximo). Tras alcanzar el límite máximo, las muertes de súbditos de asedio restaurarán un 6% de la vida máxima."],
+         "name": "La fuerza de las edades",
+         "image": {
+            "w": 48,
+            "full": "6262.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 384
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6263": {
+         "ranks": 1,
+         "id": 6263,
+         "sanitizedDescription": ["+4% de reducción de daño. Un 6% del daño de campeones enemigos que debería sufrir el campeón aliado más cercano te tocará sufrirlo a ti. El daño no se redirige si estás por debajo del 5% de tu vida máxima."],
+         "description": ["+4% de reducción de daño. Un 6% del daño de campeones enemigos que debería sufrir el campeón aliado más cercano te tocará sufrirlo a ti. El daño no se redirige si estás por debajo del 5% de tu vida máxima."],
+         "name": "Vínculo de piedra",
+         "image": {
+            "w": 48,
+            "full": "6263.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 432
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6343": {
+         "ranks": 1,
+         "id": 6343,
+         "sanitizedDescription": ["Los asesinatos y ayudas sobre un campeón restauran un 5% de la vida y el maná que te falten."],
+         "description": ["Los asesinatos y ayudas sobre un campeón restauran un 5% de la vida y el maná que te falten."],
+         "name": "Juego peligroso",
+         "image": {
+            "w": 48,
+            "full": "6343.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 336
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6352": {
+         "ranks": 5,
+         "id": 6352,
+         "sanitizedDescription": [
+            "El máximo de reducción de enfriamiento aumenta al 41% y obtienes un 1% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 42% y obtienes un 2% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 43% y obtienes un 3% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 44% y obtienes un 4% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 45% y obtienes un 5% de reducción de enfriamiento."
+         ],
+         "description": [
+            "El máximo de reducción de enfriamiento aumenta al 41% y obtienes un 1% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 42% y obtienes un 2% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 43% y obtienes un 3% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 44% y obtienes un 4% de reducción de enfriamiento.",
+            "El máximo de reducción de enfriamiento aumenta al 45% y obtienes un 5% de reducción de enfriamiento."
+         ],
+         "name": "Inteligencia",
+         "image": {
+            "w": 48,
+            "full": "6352.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 432
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6351": {
+         "ranks": 5,
+         "id": 6351,
+         "sanitizedDescription": [
+            "Otorga 0,6 (+0,06 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 1,2 (+0,12 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 1,8 (+0,18 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 2,4 (+0,24 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 3 (+0,3 por nivel) de penetración mágica y de penetración de armadura."
+         ],
+         "description": [
+            "Otorga 0,6 (+0,06 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 1,2 (+0,12 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 1,8 (+0,18 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 2,4 (+0,24 por nivel) de penetración mágica y de penetración de armadura.",
+            "Otorga 3 (+0,3 por nivel) de penetración mágica y de penetración de armadura."
+         ],
+         "name": "Precisión",
+         "image": {
+            "w": 48,
+            "full": "6351.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 384
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6212": {
+         "ranks": 5,
+         "id": 6212,
+         "sanitizedDescription": [
+            "+1% de armadura adicional y resistencia mágica.",
+            "+2% de armadura adicional y resistencia mágica.",
+            "+3% de armadura adicional y resistencia mágica.",
+            "+4% de armadura adicional y resistencia mágica.",
+            "+5% de armadura adicional y resistencia mágica."
+         ],
+         "description": [
+            "+1% de armadura adicional y resistencia mágica.",
+            "+2% de armadura adicional y resistencia mágica.",
+            "+3% de armadura adicional y resistencia mágica.",
+            "+4% de armadura adicional y resistencia mágica.",
+            "+5% de armadura adicional y resistencia mágica."
+         ],
+         "name": "Indoblegable",
+         "image": {
+            "w": 48,
+            "full": "6212.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 240,
+            "x": 384
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6211": {
+         "ranks": 5,
+         "id": 6211,
+         "sanitizedDescription": [
+            "+0,4 de vida cada 5 segundos.",
+            "+0,8 de vida cada 5 segundos.",
+            "+1,2 de vida cada 5 segundos.",
+            "+1,6 de vida cada 5 segundos.",
+            "+2,0 de vida cada 5 segundos."
+         ],
+         "description": [
+            "+0,4 de vida cada 5 segundos.",
+            "+0,8 de vida cada 5 segundos.",
+            "+1,2 de vida cada 5 segundos.",
+            "+1,6 de vida cada 5 segundos.",
+            "+2,0 de vida cada 5 segundos."
+         ],
+         "name": "Recuperación",
+         "image": {
+            "w": 48,
+            "full": "6211.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 240,
+            "x": 336
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6111": {
+         "ranks": 5,
+         "id": 6111,
+         "sanitizedDescription": [
+            "+0,8% de velocidad de ataque.",
+            "+1,6% de velocidad de ataque.",
+            "+2,4% de velocidad de ataque.",
+            "+3,2% de velocidad de ataque.",
+            "+4% de velocidad de ataque."
+         ],
+         "description": [
+            "+0,8% de velocidad de ataque.",
+            "+1,6% de velocidad de ataque.",
+            "+2,4% de velocidad de ataque.",
+            "+3,2% de velocidad de ataque.",
+            "+4% de velocidad de ataque."
+         ],
+         "name": "Furia",
+         "image": {
+            "w": 48,
+            "full": "6111.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 144
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6134": {
+         "ranks": 5,
+         "id": 6134,
+         "sanitizedDescription": [
+            "+2 de daño de ataque y 3 de poder de habilidad a nivel 18 (0,11 de daño de ataque y 0,16 de poder de habilidad por nivel).",
+            "+4 de daño de ataque y 6 de poder de habilidad a nivel 18 (0,22 de daño de ataque y 0,32 de poder de habilidad por nivel).",
+            "+6 de daño de ataque y 9 de poder de habilidad a nivel 18 (0,33 de daño de ataque y 0,5 de poder de habilidad por nivel).",
+            "+8 de daño de ataque y 12 de poder de habilidad a nivel 18 (0,44 de daño de ataque y 0,66 de poder de habilidad por nivel).",
+            "+10 de daño de ataque y 15 de poder de habilidad a nivel 18 (0,55 de daño de ataque y 0,83 de poder de habilidad por nivel)."
+         ],
+         "description": [
+            "+2 de daño de ataque y 3 de poder de habilidad a nivel 18 (0,11 de daño de ataque y 0,16 de poder de habilidad por nivel).",
+            "+4 de daño de ataque y 6 de poder de habilidad a nivel 18 (0,22 de daño de ataque y 0,32 de poder de habilidad por nivel).",
+            "+6 de daño de ataque y 9 de poder de habilidad a nivel 18 (0,33 de daño de ataque y 0,5 de poder de habilidad por nivel).",
+            "+8 de daño de ataque y 12 de poder de habilidad a nivel 18 (0,44 de daño de ataque y 0,66 de poder de habilidad por nivel).",
+            "+10 de daño de ataque y 15 de poder de habilidad a nivel 18 (0,55 de daño de ataque y 0,83 de poder de habilidad por nivel)."
+         ],
+         "name": "Talento natural",
+         "image": {
+            "w": 48,
+            "full": "6134.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 384
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6114": {
+         "ranks": 5,
+         "id": 6114,
+         "sanitizedDescription": [
+            "+0,4% de aumento de daño de habilidad.",
+            "+0,8% de aumento de daño de habilidad.",
+            "+1,2% de aumento de daño de habilidad.",
+            "+1,6% de aumento de daño de habilidad.",
+            "+2,0% de aumento de daño de habilidad."
+         ],
+         "description": [
+            "+0,4% de aumento de daño de habilidad.",
+            "+0,8% de aumento de daño de habilidad.",
+            "+1,2% de aumento de daño de habilidad.",
+            "+1,6% de aumento de daño de habilidad.",
+            "+2,0% de aumento de daño de habilidad."
+         ],
+         "name": "Brujería",
+         "image": {
+            "w": 48,
+            "full": "6114.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 192
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6151": {
+         "ranks": 5,
+         "id": 6151,
+         "sanitizedDescription": [
+            "+1,4% de penetración de armadura.",
+            "+2,8% de penetración de armadura.",
+            "+4,2% de penetración de armadura.",
+            "+5,6% de penetración de armadura.",
+            "+7% de penetración de armadura."
+         ],
+         "description": [
+            "+1,4% de penetración de armadura.",
+            "+2,8% de penetración de armadura.",
+            "+4,2% de penetración de armadura.",
+            "+5,6% de penetración de armadura.",
+            "+7% de penetración de armadura."
+         ],
+         "name": "Golpes martilleantes",
+         "image": {
+            "w": 48,
+            "full": "6151.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 48
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6131": {
+         "ranks": 5,
+         "id": 6131,
+         "sanitizedDescription": [
+            "+0,4% de robo de vida y succión de hechizo.",
+            "+0,8% de robo de vida y succión de hechizo.",
+            "+1,2% de robo de vida y succión de hechizo.",
+            "+1,6% de robo de vida y succión de hechizo.",
+            "+2,0% de robo de vida y succión de hechizo."
+         ],
+         "description": [
+            "+0,4% de robo de vida y succión de hechizo.",
+            "+0,8% de robo de vida y succión de hechizo.",
+            "+1,2% de robo de vida y succión de hechizo.",
+            "+1,6% de robo de vida y succión de hechizo.",
+            "+2,0% de robo de vida y succión de hechizo."
+         ],
+         "name": "Vampirismo",
+         "image": {
+            "w": 48,
+            "full": "6131.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 336
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6231": {
+         "ranks": 5,
+         "id": 6231,
+         "sanitizedDescription": [
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 1,6% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 3,2% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 4,8% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 6,4% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 8% más potentes."
+         ],
+         "description": [
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 1,6% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 3,2% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 4,8% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 6,4% más potentes.",
+            "Los escudos, curaciones, regeneraciones y robos de vida que recibas serán un 8% más potentes."
+         ],
+         "name": "Armadura rúnica",
+         "image": {
+            "w": 48,
+            "full": "6231.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 48
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6154": {
+         "ranks": 5,
+         "id": 6154,
+         "sanitizedDescription": [
+            "+1,4% de penetración mágica.",
+            "+2,8% de penetración mágica.",
+            "+4,2% de penetración mágica.",
+            "+5,6% de penetración mágica.",
+            "+7% de penetración mágica."
+         ],
+         "description": [
+            "+1,4% de penetración mágica.",
+            "+2,8% de penetración mágica.",
+            "+4,2% de penetración mágica.",
+            "+5,6% de penetración mágica.",
+            "+7% de penetración mágica."
+         ],
+         "name": "Pensamientos lacerantes",
+         "image": {
+            "w": 48,
+            "full": "6154.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 432,
+            "x": 96
+         },
+         "prereq": "0",
+         "masteryTree": "Ferocity"
+      },
+      "6311": {
+         "ranks": 5,
+         "id": 6311,
+         "sanitizedDescription": [
+            "+0,6% de velocidad de movimiento cuando no se esté en combate.",
+            "+1,2% de velocidad de movimiento cuando no se esté en combate.",
+            "+1,8% de velocidad de movimiento cuando no se esté en combate.",
+            "+2,4% de velocidad de movimiento cuando no se esté en combate.",
+            "+3% de velocidad de movimiento cuando no se esté en combate."
+         ],
+         "description": [
+            "+0,6% de velocidad de movimiento cuando no se esté en combate.",
+            "+1,2% de velocidad de movimiento cuando no se esté en combate.",
+            "+1,8% de velocidad de movimiento cuando no se esté en combate.",
+            "+2,4% de velocidad de movimiento cuando no se esté en combate.",
+            "+3% de velocidad de movimiento cuando no se esté en combate."
+         ],
+         "name": "Trotamundos",
+         "image": {
+            "w": 48,
+            "full": "6311.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 0
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6232": {
+         "ranks": 5,
+         "id": 6232,
+         "sanitizedDescription": [
+            "+9 de vida.",
+            "+18 de vida.",
+            "+27 de vida.",
+            "+36 de vida.",
+            "+45 de vida."
+         ],
+         "description": [
+            "+9 de vida.",
+            "+18 de vida.",
+            "+27 de vida.",
+            "+36 de vida.",
+            "+45 de vida."
+         ],
+         "name": "Cicatrices de veterano",
+         "image": {
+            "w": 48,
+            "full": "6232.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 96
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6312": {
+         "ranks": 5,
+         "id": 6312,
+         "sanitizedDescription": [
+            "Los ataques y los hechizos a un único objetivo infligen 1 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 2 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 3 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 4 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 5 de daño adicional a los súbditos y monstruos."
+         ],
+         "description": [
+            "Los ataques y los hechizos a un único objetivo infligen 1 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 2 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 3 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 4 de daño adicional a los súbditos y monstruos.",
+            "Los ataques y los hechizos a un único objetivo infligen 5 de daño adicional a los súbditos y monstruos."
+         ],
+         "name": "Fiereza",
+         "image": {
+            "w": 48,
+            "full": "6312.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 48
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6331": {
+         "ranks": 5,
+         "id": 6331,
+         "sanitizedDescription": [
+            "Aumenta un 1% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 2% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 3% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 4% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 5% el daño infligido a los campeones que estén por debajo del 40% de vida."
+         ],
+         "description": [
+            "Aumenta un 1% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 2% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 3% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 4% el daño infligido a los campeones que estén por debajo del 40% de vida.",
+            "Aumenta un 5% el daño infligido a los campeones que estén por debajo del 40% de vida."
+         ],
+         "name": "Sin piedad",
+         "image": {
+            "w": 48,
+            "full": "6331.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 192
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6332": {
+         "ranks": 5,
+         "id": 6332,
+         "sanitizedDescription": [
+            "Cada 5 segundos regenerarás un 0,3% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 0,6% del maná que hayas consumido.",
+            "Cada 5 segundos regenerarás un 0,9% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 1,2% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 1,5% del maná que hayas consumido."
+         ],
+         "description": [
+            "Cada 5 segundos regenerarás un 0,3% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 0,6% del maná que hayas consumido.",
+            "Cada 5 segundos regenerarás un 0,9% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 1,2% del maná que te falte.",
+            "Cada 5 segundos regenerarás un 1,5% del maná que hayas consumido."
+         ],
+         "name": "Meditación",
+         "image": {
+            "w": 48,
+            "full": "6332.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 336,
+            "x": 240
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6251": {
+         "ranks": 5,
+         "id": 6251,
+         "sanitizedDescription": [
+            "+3% de resistencia a tenacidad y ralentización.",
+            "+6% de resistencia a tenacidad y ralentización.",
+            "+9% de resistencia a tenacidad y ralentización.",
+            "+12% de resistencia a tenacidad y ralentización.",
+            "+15% de resistencia a tenacidad y ralentización."
+         ],
+         "description": [
+            "+3% de resistencia a tenacidad y ralentización.",
+            "+6% de resistencia a tenacidad y ralentización.",
+            "+9% de resistencia a tenacidad y ralentización.",
+            "+12% de resistencia a tenacidad y ralentización.",
+            "+15% de resistencia a tenacidad y ralentización."
+         ],
+         "name": "Rapidez",
+         "image": {
+            "w": 48,
+            "full": "6251.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 240
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6252": {
+         "ranks": 5,
+         "id": 6252,
+         "sanitizedDescription": [
+            "+0,6 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+1,2 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+1,8 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+2,4 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+3 de armadura y resistencia mágica por cada campeón enemigo cercano."
+         ],
+         "description": [
+            "+0,6 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+1,2 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+1,8 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+2,4 de armadura y resistencia mágica por cada campeón enemigo cercano.",
+            "+3 de armadura y resistencia mágica por cada campeón enemigo cercano."
+         ],
+         "name": "Guardián legendario",
+         "image": {
+            "w": 48,
+            "full": "6252.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 288
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6362": {
+         "ranks": 1,
+         "id": 6362,
+         "sanitizedDescription": ["Tu tercer ataque o hechizo de daño sobre un mismo campeón enemigo provocará que caiga un rayo que inflige daño mágico en la zona. Daño: 10 por nivel, más un 30% del daño de ataque adicional y un 10% de tu poder de habilidad (25-15 segundos de enfriamiento, según el nivel)."],
+         "description": ["Tu tercer ataque o hechizo de daño sobre un mismo campeón enemigo provocará que caiga un rayo que inflige daño mágico en la zona. <br><br>Daño: 10 por nivel, más un 30% del daño de ataque adicional y un 10% de tu poder de habilidad (25-15 segundos de enfriamiento, según el nivel)."],
+         "name": "Decreto del señor del trueno",
+         "image": {
+            "w": 48,
+            "full": "6362.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 48
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6221": {
+         "ranks": 1,
+         "id": 6221,
+         "sanitizedDescription": ["+15 de velocidad de movimiento en maleza y río."],
+         "description": ["+15 de velocidad de movimiento en maleza y río."],
+         "name": "Explorador",
+         "image": {
+            "w": 48,
+            "full": "6221.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 240,
+            "x": 432
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      },
+      "6361": {
+         "ranks": 1,
+         "id": 6361,
+         "sanitizedDescription": ["Quitarle a un campeón un 30% de su vida máxima en 2,5 segundos te da un 40% de velocidad de movimiento y un 75% de resistencia a las ralentizaciones durante 3 segundos (10 segundos de enfriamiento)."],
+         "description": ["Quitarle a un campeón un 30% de su vida máxima en 2,5 segundos te da un 40% de velocidad de movimiento y un 75% de resistencia a las ralentizaciones durante 3 segundos (10 segundos de enfriamiento)."],
+         "name": "Tensión del saqueador de tormentas",
+         "image": {
+            "w": 48,
+            "full": "6361.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 0
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6363": {
+         "ranks": 1,
+         "id": 6363,
+         "sanitizedDescription": ["Tus escudos y curaciones son un 10% más potentes. Además, si usas escudos y curaciones en otros aliados, aumentarán su armadura en 5-22 (según el nivel) y su resistencia mágica en 2,5-11 durante 3 segundos."],
+         "description": ["Tus escudos y curaciones son un 10% más potentes. Además, si usas escudos y curaciones en otros aliados, aumentarán su armadura en 5-22 (según el nivel) y su resistencia mágica en 2,5-11 durante 3 segundos."],
+         "name": "Bendición de hablavientos",
+         "image": {
+            "w": 48,
+            "full": "6363.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 384,
+            "x": 96
+         },
+         "prereq": "0",
+         "masteryTree": "Cunning"
+      },
+      "6223": {
+         "ranks": 1,
+         "id": 6223,
+         "sanitizedDescription": ["Sufres 2 puntos menos de daño de los ataques básicos de campeones y monstruos neutrales."],
+         "description": ["Sufres 2 puntos menos de daño de los ataques básicos de campeones y monstruos neutrales."],
+         "name": "Piel dura",
+         "image": {
+            "w": 48,
+            "full": "6223.png",
+            "sprite": "mastery0.png",
+            "group": "gray_mastery",
+            "h": 48,
+            "y": 288,
+            "x": 0
+         },
+         "prereq": "0",
+         "masteryTree": "Resolve"
+      }
+   },
+   "type": "mastery",
+   "version": "6.4.1"
+}

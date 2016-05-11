@@ -1,0 +1,203 @@
+TEAMS
+Date: Wed, 24 Feb 2016 23:28:39 GMT
+-----------------------------------
+{"645104": [{
+   "secondLastJoinDate": 1437596274000,
+   "lastJoinDate": 1450289996000,
+   "fullId": "TEAM-d65c3080-2f60-11e5-a856-d4ae528a4c50",
+   "matchHistory": [
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 50,
+         "opposingTeamName": "CD9 Team",
+         "invalid": false,
+         "deaths": 47,
+         "gameId": 231964529,
+         "kills": 30,
+         "win": false,
+         "date": 1438410570650,
+         "opposingTeamKills": 47
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 99,
+         "opposingTeamName": "KB SHULIAN SOMOS 5",
+         "invalid": false,
+         "deaths": 41,
+         "gameId": 231923487,
+         "kills": 45,
+         "win": true,
+         "date": 1438402802704,
+         "opposingTeamKills": 40
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 51,
+         "opposingTeamName": "Probando la wea",
+         "invalid": false,
+         "deaths": 46,
+         "gameId": 230690772,
+         "kills": 36,
+         "win": false,
+         "date": 1438052712632,
+         "opposingTeamKills": 46
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 3,
+         "opposingTeamName": "Berserker Training",
+         "invalid": false,
+         "deaths": 22,
+         "gameId": 230674974,
+         "kills": 2,
+         "win": false,
+         "date": 1438049891815,
+         "opposingTeamKills": 22
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 20,
+         "opposingTeamName": "SpeedWagon",
+         "invalid": false,
+         "deaths": 28,
+         "gameId": 229330192,
+         "kills": 12,
+         "win": false,
+         "date": 1437718893271,
+         "opposingTeamKills": 28
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 57,
+         "opposingTeamName": "Splash DMG",
+         "invalid": false,
+         "deaths": 12,
+         "gameId": 229293429,
+         "kills": 50,
+         "win": true,
+         "date": 1437711889524,
+         "opposingTeamKills": 12
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 28,
+         "opposingTeamName": "unistallpls",
+         "invalid": false,
+         "deaths": 7,
+         "gameId": 228513479,
+         "kills": 19,
+         "win": true,
+         "date": 1437544860974,
+         "opposingTeamKills": 7
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 119,
+         "opposingTeamName": "OuterHeaven",
+         "invalid": false,
+         "deaths": 31,
+         "gameId": 228488204,
+         "kills": 52,
+         "win": true,
+         "date": 1437542869514,
+         "opposingTeamKills": 31
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 76,
+         "opposingTeamName": "LOSFIZURAMAS",
+         "invalid": false,
+         "deaths": 18,
+         "gameId": 228204719,
+         "kills": 67,
+         "win": true,
+         "date": 1437465259479,
+         "opposingTeamKills": 18
+      },
+      {
+         "gameMode": "CLASSIC",
+         "mapId": 11,
+         "assists": 102,
+         "opposingTeamName": "los chilenos manquillos",
+         "invalid": false,
+         "deaths": 29,
+         "gameId": 228202872,
+         "kills": 42,
+         "win": true,
+         "date": 1437462759763,
+         "opposingTeamKills": 29
+      }
+   ],
+   "lastJoinedRankedTeamQueueDate": 1438407752000,
+   "status": "RANKED",
+   "teamStatDetails": [
+      {
+         "losses": 0,
+         "averageGamesPlayed": 0,
+         "wins": 0,
+         "teamStatType": "RANKED_TEAM_3x3"
+      },
+      {
+         "losses": 4,
+         "averageGamesPlayed": 0,
+         "wins": 6,
+         "teamStatType": "RANKED_TEAM_5x5"
+      }
+   ],
+   "tag": "TTTh",
+   "name": "Time to Tryhard",
+   "thirdLastJoinDate": 1437452988000,
+   "roster": {
+      "ownerId": 645104,
+      "memberList": [
+         {
+            "joinDate": 1437452866000,
+            "inviteDate": 1437452866000,
+            "status": "MEMBER",
+            "playerId": 52267
+         },
+         {
+            "joinDate": 1437452902000,
+            "inviteDate": 1437452896000,
+            "status": "MEMBER",
+            "playerId": 645104
+         },
+         {
+            "joinDate": 1437452957000,
+            "inviteDate": 1437452916000,
+            "status": "MEMBER",
+            "playerId": 372090
+         },
+         {
+            "joinDate": 1437452930000,
+            "inviteDate": 1437452922000,
+            "status": "MEMBER",
+            "playerId": 83270
+         },
+         {
+            "joinDate": 1437452988000,
+            "inviteDate": 1437452926000,
+            "status": "MEMBER",
+            "playerId": 104859
+         },
+         {
+            "joinDate": 1437596274000,
+            "inviteDate": 1437452960000,
+            "status": "MEMBER",
+            "playerId": 643253
+         }
+      ]
+   },
+   "lastGameDate": 1438410570000,
+   "modifyDate": 1452299654000,
+   "createDate": 1437452866000
+}]}

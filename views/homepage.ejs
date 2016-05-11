@@ -1,4 +1,6 @@
-<!-- Default home page -->
+<!--
+
+&lt;!&ndash; Default home page &ndash;&gt;
 <link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
 <style>
     /* Styles included inline since you'll probably be deleting this page anyway */
@@ -16,8 +18,8 @@ setTimeout(function sunrise () {
         <h3 class="container">You're looking at: <code><%= view.pathFromApp + '.' +view.ext %></code></h3>
     </div>
     <div class="main container clearfix">
-        <!-- <h1>Getting started</h1>
-        <p>Don't worry, we've got your back.</p> -->
+        &lt;!&ndash; <h1>Getting started</h1>
+        <p>Don't worry, we've got your back.</p> &ndash;&gt;
         <ul class="getting-started">
             <li class="clearfix">
                 <div class="step">
@@ -51,7 +53,7 @@ setTimeout(function sunrise () {
             </li>
         </ul>
         <div class="links">
-            <!-- <h3>Links</h3> -->
+            &lt;!&ndash; <h3>Links</h3> &ndash;&gt;
             <ul class="link-list">
 
                 <h4>Docs</h4>
@@ -69,6 +71,28 @@ setTimeout(function sunrise () {
                 <a target="_blank" href="http://webchat.freenode.net/"><li>IRC (#sailsjs on freenode)</li></a>
 
             </ul>
+        </div>
+    </div>
+</div>
+-->
+<div class="container" ng-controller="TodoCtrl as todo">
+    <div class="jumbotron">
+        <h1 align="center">Todo Application Whathelol</h1>
+        <br>
+        <div id="todo-form" class="row">
+            <div class="col-sm-8 col-sm-offset-2 text-center">
+
+            </div>
+        </div>
+    </div>
+    <div id="todo-list" class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <div class="checkbox" ng-repeat="singleTodo in todos">
+                <label>
+                    <input type="checkbox" ng-click="todo.removeTodo(singleTodo)">
+                    {{ singleTodo.value }}
+                </label>
+            </div>
         </div>
     </div>
 </div>

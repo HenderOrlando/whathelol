@@ -14,16 +14,19 @@
  */
 module.exports = function(grunt) {
 
-	grunt.config.set('watch', {
-		assets: {
+    grunt.config.set('watch', {
+        assets: {
 
-			// Assets to watch:
-			files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**'],
+            // Assets to watch:
+            files: ['assets/**/*', 'tasks/pipeline.js', '!**/node_modules/**', '!**/bower_components/**'],
 
-			// When assets are changed:
-			tasks: ['syncAssets' , 'linkAssets']
-		}
-	});
+            // When assets are changed:
+            tasks: ['syncAssets' , 'linkAssets']
+        },
+        options: {
+            livereload: true
+        }
+    });
 
-	grunt.loadNpmTasks('grunt-contrib-watch');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 };

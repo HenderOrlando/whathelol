@@ -16,7 +16,12 @@ var tmpPath = '.tmp/public/';
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+    '/bower_components/bootwatch/css/bootstrap.css',
+    '/bower_components/angular-bootstrap/ui-bootstrap-csp.css',
+    '/bower_components/angular-ui-layout/src/ui-layout.css',
+    '/bower_components/jqplot/jquery.jqplot.css',
+
+    'styles/**/*.css'
 ];
 
 
@@ -24,18 +29,48 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-  // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+    // Load sails.io before everything else
+    'js/dependencies/sails.io.js',
 
-  // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+    'js/jquery.js',
+    'js/dist/jquery.js',
+    '/bower_components/jqplot/jquery.jqplot.js',
+    'js/moment.js',
+    'js/tinymce.js',
+    '/bower_components/tinymce-dist/tinymce.jquery.js',
+    'js/js/bootstrap.js',
+    'js/angular.js',
+    'js/angular-animate.js',
+    'js/ui-bootstrap.js',
+    'js/ui-bootstrap-tpls.js',
+    'js/angular-cookies.js',
+    'js/angular-mocks.js',
+    'js/angular-moment.js',
+    'js/angular-resource.js',
+    'js/angular-route.js',
+    'js/angular-sanitize.js',
+    'js/angular-touch.js',
+    'js/src/chart.js',
+    'js/src/ui-layout.js',
+    'js/dist/mask.js',
+    'js/dist/mention.js',
+    'js/release/angular-ui-router.js',
+    'js/dist/scrollpoint.js',
+    'js/src/tinymce.js',
+    'js/dist/angular-ui-tour.js',
+    'js/dist/uploader.js',
+    'js/dist/validate.js',
+    'js/lib/angular-smooth-scroll.js',
 
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
-  'js/**/*.js',
+    // Dependencies like jQuery, or Angular are brought in here
+    'js/dependencies/**/*.js',
 
-  // Use the "exclude" operator to ignore files
-  // '!js/ignore/these/files/*.js'
+    // All of the rest of your client-side js files
+    // will be injected here in no particular order.
+    'js/**/*.js'
+
+    // Use the "exclude" operator to ignore files
+    // '!js/ignore/these/files/*.js'
 ];
 
 
@@ -49,7 +84,7 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+    'templates/**/*.html'
 ];
 
 
@@ -64,5 +99,5 @@ module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
 // Transform paths relative to the "assets" folder to be relative to the public
 // folder, preserving "exclude" operators.
 function transformPath(path) {
-  return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
+    return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
 }
