@@ -1,0 +1,175 @@
+<div layout-fill layout="column">
+    <md-toolbar class="md-primary md-hue-3 md-whiteframe-3dp md-overflow-hidden md-overflow-x">
+        <div class="md-toolbar-tools">
+            <div layout="row" layout-margin>
+                <div layout="row" layout-align="center center" flex-sm>
+                    <img
+                        src="images/soluciones-cucuta.png"
+                        alt="Soluciones Cúcuta"
+                        title="Soluciones Cúcuta"
+                        class="logo"
+                    />
+                </div>
+            </div>
+            <div flex layout="row" layout-align="center center">
+                <md-button
+                    ui-sref="blog"
+                    class="md-accent md-raised"
+                    aria-label="Blog"
+                >
+                    Descubrenos
+                </md-button>
+                <!--<section
+                    layout="row"
+                    layout-align="center center"
+                    class="button-group"
+                >
+                    <md-button
+                        ng-repeat="ele in index.menu"
+                        class="{{ ::(ele.icon?'md-icon-button':'') }}"
+                        aria-label="{{ ::ele.nombre }}"
+                    >
+                        <md-icon
+                            ng-if="ele.icon"
+                            md-svg-icon="{{ ::ele.icon }}"
+                        ></md-icon>
+                        <span ng-if="!ele.icon">
+                            {{ ::ele.nombre }}
+                        </span>
+                    </md-button>
+                </section>-->
+            </div>
+            <div layout="row">
+                <md-button
+                    href="http://76.74.242.160:2095/"
+                    class="md-accent md-hue-3"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    aria-label="Email"
+                >
+                    <span ng-show="mdMedia('gt-sm')">
+                        Accede al Email
+                    </span>
+                    <md-icon md-svg-icon="email"></md-icon>
+                </md-button>
+                <md-button
+                    ui-sref="admin"
+                    class="md-accent md-hue-3 md-icon-button"
+                    aria-label="Cuenta"
+                >
+                    <md-icon md-svg-icon="account"></md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content flex layout="column" layout-align="center center">
+        <div
+            layout="row"
+            flex
+            layout-align="center center"
+            class="md-width-100"
+        >
+            <!--<div layout="column">
+                <pempo-slide
+                    adjust-to="window"
+                    images="index.images"
+                    slide-in="left"
+                    with-fade="true"
+                    slide-size="cover"
+                    autoslide="5000"
+                />
+            </div>-->
+        </div>
+        <md-content
+            md-theme="solucionescucutablank"
+            layout="row"
+            layout-align="center center"
+            class="md-width-100 md-overflow-hidden"
+        >
+            <form class="search" layout="column">
+                <div layout="row" layout-align="center center">
+                    <md-input-container layout="row" flex class="md-accent md-hue-3">
+                        <label>{{ ::index.search.label }}</label>
+                        <input ng-model="index.search.query">
+                    </md-input-container>
+                    <md-button
+                        type="submit"
+                        class="md-raised md-primary md-hue-2"
+                        aria-label="{{ ::index.search.button.label }}"
+                    >
+                        <span>
+                            {{ ::index.search.button.label }}
+                        </span>
+                    </md-button>
+                </div>
+            </form>
+        </md-content>
+        <div
+            layout="row"
+            flex
+            layout-align="center center"
+            class="md-width-100"
+        >
+            <!--<div layout="column">
+                <pempo-slide
+                    adjust-to="window"
+                    images="index.images"
+                    slide-in="left"
+                    with-fade="true"
+                    slide-size="cover"
+                    autoslide="5000"
+                />
+            </div>-->
+        </div>
+        <div ui-view="list">
+
+        </div>
+    </md-content>
+    <md-toolbar class="md-accent md-hue-2 md-whiteframe-3dp md-overflow-hidden md-overflow-x">
+        <div class="md-toolbar-tools" layout="row">
+            <div
+                ng-if="index.menu"
+                ng-class="{'flex': mdMedia('md') || mdMedia('gt-md')}"
+            >
+                <section
+                    layout="row"
+                    layout-align="center center"
+                    class="button-group"
+                >
+                    <md-button
+                        ng-repeat="ele in index.menu"
+                        ng-class="{'md-icon-button': ele.icon && !mdMedia('gt-sm')}"
+                        aria-label="{{ ::ele.nombre }}"
+                    >
+                        <md-icon
+                            ng-if="ele.icon"
+                            md-svg-icon="{{ ::ele.icon }}"
+                        ></md-icon>
+                        <span ng-if="!ele.icon || mdMedia('gt-sm')">
+                            {{ ::ele.nombre }}
+                        </span>
+                    </md-button>
+                </section>
+            </div>
+        </div>
+    </md-toolbar>
+</div>
+<!--<div layout="column">
+    <pempo-slide
+        adjust-to="window"
+        images="index.images"
+        slide-in="left"
+        with-fade="true"
+        slide-size="cover"
+    />
+        &lt;!&ndash;autoslide="5000"&ndash;&gt;
+</div>
+<div layout="row">
+    <div
+        flex-offset-gt-sm="15"
+        flex-gt-sm="70"
+        flex="100"
+    >
+        <pempo-publicacion publicaciones="index.publicaciones" />
+    </div>
+    <div flex ng-show="mdMedia('gt-sm')"></div>
+</div>-->

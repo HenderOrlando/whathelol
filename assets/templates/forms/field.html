@@ -1,0 +1,261 @@
+<!--<h1>{{ ::key }}</h1>-->
+
+<md-input-container
+    ng-if="key !== 'icono' && key !== 'icon' && val.type && !val.opts"
+    flex>
+    <label ng-if="val.type !== 'boolean'">
+        {{ ::(form.labels[key] || key) }}
+    </label>
+    <textarea
+        ng-if="val.type === 'text'"
+        ng-required="val.required"
+        ng-model="form.modelElemento[key]"
+    ></textarea>
+    <input
+        ng-if="val.type !== 'text' && val.type !== 'boolean'"
+        ng-required="val.required"
+        ng-model="form.modelElemento[key]"
+        type="{{ ::val.type }}"
+    >
+    <md-checkbox
+        ng-if="val.type === 'boolean'"
+        aria-label="{{ ::form.labels[key] }}"
+        ng-model="form.modelElemento[key]"
+    >
+        {{ ::form.labels[key] || key}}
+    </md-checkbox>
+</md-input-container>
+<div ng-if="!!val.opts" layout="row" flex>
+    <md-icon
+        ng-if="key === 'icono'"
+        md-svg-icon="{{ form.modelElemento[key] }}"
+    ></md-icon>
+    <md-autocomplete
+        ng-if="!val.multiple"
+        flex
+        md-no-cache="true"
+        md-selected-item="form.modelElemento[key]"
+        md-selected-item-change="form.autocompleteSelectedChange(val, key, item)"
+        md-search-text-change="form.autocompleteTextChange(val, key)"
+        md-search-text="form.autocompleteSearchText[key]"
+        md-search-item-change="form.autocompleteItemChange(val, key, item)"
+        md-items="item in form.autocompleteQuerySearch(val, key)"
+        md-item-text="item"
+        md-min-length="1"
+        placeholder="{{ ::(form.labels[key] || key) }}"
+        md-floating-label="{{ ::(form.labels[key] || key) }}"
+    >
+        <md-item-template>
+            <md-icon ng-if="key === 'icono'" md-svg-icon="{{ item.icono || item.nombre || item }}"></md-icon>
+            <span md-highlight-text="form.autocompleteSearchText[key]" md-highlight-flags="^i">
+                {{ item.nombre || item }}
+            </span>
+        </md-item-template>
+        <md-not-found>
+            {{ ::(form.labels[key] || key) }} "{{ form.autocompleteSearchText[key] }}" were not found.
+            <a ng-click="form.formNewElemento(val, form.modelElemento[key])">
+                Create a new one!
+            </a>
+        </md-not-found>
+    </md-autocomplete>
+    <md-chips
+        ng-if="val.multiple"
+        flex
+        ng-model="form.modelElemento[key]"
+        md-autocomplete-snap
+        md-transform-chip="form.autocompleteTransformChip(val, key, $chip)"
+        md-on-add="form.autocompleteOnAddChip(val, key, $chip)"
+        md-on-remove="form.autocompleteOnRemoveChip(val, key, $chip)"
+    >
+        <md-autocomplete
+            flex
+            md-no-cache="true"
+            md-selected-item="form.selectedModelElemento[key]"
+            md-selected-item-change="form.autocompleteSelectedChange(val, key, item)"
+            md-search-text-change="form.autocompleteTextChange(val, key)"
+            md-search-text="form.autocompleteSearchText[key]"
+            md-search-item-change="form.autocompleteItemChange(val, key, item)"
+            md-items="item in form.autocompleteQuerySearch(val, key)"
+            md-item-text="item.nombre"
+            md-min-length="1"
+            placeholder="{{ ::(form.labels[key] || key) }}"
+        >
+            <md-item-template layout="row">
+                <md-icon
+                    ng-if="item.icono"
+                    md-svg-icon="{{ item.icono }}"
+                ></md-icon>
+                <span md-highlight-text="form.autocompleteSearchText[key]" md-highlight-flags="^i">
+                    {{ item.nombre || item }}
+                </span>
+            </md-item-template>
+        </md-autocomplete>
+        <md-chip-template>
+            <md-icon
+                ng-if="$chip.icono"
+                md-svg-icon="{{ $chip.icono }}"
+            ></md-icon>
+            <span>
+                {{ $chip.nombre || $chip }}
+            </span>
+        </md-chip-template>
+    </md-chips>
+</div>
+<div ng-if="!!val.model" layout="row" flex>
+    <md-autocomplete
+        ng-if="!val.multiple"
+        flex
+        md-no-cache="true"
+        md-selected-item="form.modelElemento[key]"
+        md-selected-item-change="form.autocompleteSelectedChange(val, key, item)"
+        md-search-text-change="form.autocompleteTextChange(val, key)"
+        md-search-text="form.autocompleteSearchText[key]"
+        md-search-item-change="form.autocompleteItemChange(val, key, item)"
+        md-items="item in form.autocompleteQuerySearch(val, key)"
+        md-item-text="item.nombre"
+        md-min-length="1"
+        placeholder="{{ ::(form.labels[key] || key) }}"
+        md-floating-label="{{ ::(form.labels[key] || key) }}"
+    >
+        <md-item-template>
+            <span
+                md-highlight-text="form.autocompleteSearchText[key]"
+                md-highlight-flags="^i"
+            >
+                {{ item.nombre || item }}
+            </span>
+        </md-item-template>
+        <!--<md-not-found>
+            {{ ::key }} "{{ form.autocompleteSearchText[key] }}" were not found.
+            <a ng-click="forms.formNewElemento(val, forms.modelElemento[key])">
+                Create a new one!
+            </a>
+        </md-not-found>-->
+    </md-autocomplete>
+    <md-chips
+        ng-if="val.multiple"
+        flex
+        ng-model="form.modelElemento[key]"
+        md-autocomplete-snap
+        md-transform-chip="form.autocompleteTransformChip(val, key, $chip)"
+        md-on-add="form.autocompleteOnAddChip(val, key, $chip)"
+        md-on-remove="form.autocompleteOnRemoveChip(val, key, $chip)"
+    >
+        <md-autocomplete
+            flex
+            md-no-cache="true"
+            md-selected-item="form.selectedModelElemento[key]"
+            md-selected-item-change="form.autocompleteSelectedChange(val, key, item)"
+            md-search-text-change="form.autocompleteTextChange(val, key)"
+            md-search-text="form.autocompleteSearchText[key]"
+            md-search-item-change="form.autocompleteItemChange(val, key, item)"
+            md-items="item in form.autocompleteQuerySearch(val, key)"
+            md-item-text="item.nombre"
+            md-min-length="1"
+            placeholder="{{ ::(form.labels[key] || key) }}"
+        >
+            <md-item-template layout="row">
+                <md-icon
+                    ng-if="item.icono"
+                    md-svg-icon="{{ item.icono }}"
+                ></md-icon>
+                <span md-highlight-text="form.autocompleteSearchText[key]" md-highlight-flags="^i">
+                    {{ item.nombre || item }}
+                </span>
+            </md-item-template>
+        </md-autocomplete>
+        <md-chip-template>
+            <md-icon
+                ng-if="$chip.icono"
+                md-svg-icon="{{ $chip.icono }}"
+            ></md-icon>
+            <span>
+                {{ $chip.nombre || $chip }}
+            </span>
+        </md-chip-template>
+    </md-chips>
+    <!--<md-select
+        flex
+        placeholder="Seleccionar {{ form.labels[key] }}"
+        ng-model="form.modelElemento[key]"
+        ng-multiple="val.multiple"
+        md-on-open="form.editingElemento(key)"
+    >
+        <md-option
+            ng-value="opt.id"
+            ng-repeat="opt in optionsElemento[val.model]"
+        >
+            {{ opt.nombre || opt.contexto.nombre }}
+        </md-option>
+    </md-select>
+    <md-button
+        aria-label="limpiar"
+        class="md-warn"
+        ng-class="{'md-icon-button': !$mdMedia('gt-sm') }"
+        ng-click="form.modelElemento[key] = ''"
+    >
+        <md-icon md-svg-icon="close"></md-icon>
+        <span ng-if="$mdMedia('gt-sm')">
+            limpiar
+        </span>
+    </md-button>-->
+    <!--<md-button
+        aria-label="agregar"
+        class="md-primary"
+        ng-class="{'md-icon-button': !$mdMedia('gt-sm') }"
+        ng-click="form.modelElemento[key] = ''"
+    >
+        <md-icon md-svg-icon="add"></md-icon>
+        <span ng-if="$mdMedia('gt-sm')">
+            agregar
+        </span>
+    </md-button>-->
+</div>
+<!--<div ng-if="!val.type && !forms.isNew" flex>
+    <div layour="row">
+        <md-input-container flex>
+            <label>Buscar por Nombre</label>
+            <input
+                ng-model="forms.search[elemento.id][key].nombre"
+                ng-type="text"
+            >
+        </md-input-container>
+        <md-input-container flex>
+            <label>Buscar por Descripcion</label>
+            <input
+                ng-model="form.search[elemento.id][key].descripcion"
+                ng-type="text"
+            >
+        </md-input-container>
+    </div>
+    <div
+        ng-if="val.multiple"
+        layout="row"
+        layout-wrap
+    >
+        <md-checkbox
+            ng-value="opt.id"
+            aria-label="{{ form.labels[key] }}"
+            ng-click="forms.toggleElemento(key, elemento, opt)"
+            ng-checked="forms.isSelected(val, elemento, opt)"
+            ng-repeat="opt in optionsElemento[val.model] | filter: form.search.filter | orderBy: 'nombre' "
+        >
+            {{opt.nombre}}
+        </md-checkbox>
+    </div>
+    <md-radio-group
+        ng-if="!val.multiple"
+        layout="row"
+        ng-model="elemento[key].id"
+        layout-wrap
+    >
+        <md-radio-button
+            ng-value="opt.id"
+            aria-label="{{ form.labels[key] }}"
+            ng-click="form.toggleElemento(key, elemento, opt)"
+            ng-repeat="opt in optionsElemento[val.model] | filter: form.search.filter | orderBy: 'nombre' "
+        >
+            {{opt.nombre}}
+        </md-radio-button>
+    </md-radio-group>
+</div>-->

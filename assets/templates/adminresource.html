@@ -1,0 +1,282 @@
+
+<md-card layout="column" layout-fill class="layout-padding-only" ui-view>
+    <md-toolbar
+        class="md-primary md-hue-1 md-table-toolbar"
+        ng-hide="adminresource.selected.length"
+    >
+        <div class="md-toolbar-tools" layout="row">
+            <md-button
+                ng-if="!mdMedia('gt-md')"
+                class="md-raised"
+                ng-click="admin.toggleSidenav('left')"
+                aria-label="{{ ::admin.isOpenSidenav('left')?'cerrar':'abrir' }}"
+                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+            >
+                <md-icon md-svg-icon="{{ admin.getIconMenu(adminresource.resource) }}"></md-icon>
+                <span ng-if="mdMedia('gt-sm')">
+                    {{ ::(adminresource.resource) }}
+                </span>
+            </md-button>
+            <form
+                flex
+                class="search"
+                layout="column"
+                ng-if="adminresource.query"
+                ng-submit="adminresource.submitQuery()"
+            >
+                <div layout="row" layout-align="center center">
+                    <md-input-container layout="row" flex class="md-accent md-hue-3">
+                        <label>{{ ::adminresource.query.label }}</label>
+                        <input ng-model="adminresource.query.model">
+                    </md-input-container>
+                    <md-button
+                        type="submit"
+                        class="md-raised md-accent md-hue-2"
+                        aria-label="{{ ::blog.search.button.label }}"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    >
+                        <md-icon md-svg-icon="{{ ::adminresource.query.button.icon }}"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            {{ ::adminresource.query.button.label }}
+                        </span>
+                    </md-button>
+                </div>
+            </form>
+            <div layout="column" layout-align="center end">
+                <div layout="row">
+                    <md-button
+                        class="md-raised md-primary"
+                        ui-sref="admin.resource.add"
+                        aria-label="{{ ::menu.plural}}"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    >
+                        <md-icon md-svg-icon="plus"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            agregar
+                        </span>
+                    </md-button>
+                    <md-button
+                        class="md-raised md-accent"
+                        ng-click="adminresource.reloadList($event)"
+                        aria-label="recargar"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    >
+                        <md-icon md-svg-icon="refresh"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            recargar
+                        </span>
+                    </md-button>
+                </div>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-toolbar
+        class=" md-table-toolbar alternate md-primary md-hue-2"
+        ng-show="adminresource.selected.length"
+    >
+        <div class="md-toolbar-tools">
+            <span>
+                {{ adminresource.selected.length }} {{ adminresource.resource + (adminresource.selected.length > 1?"'s":'') }}
+            </span>
+            <form
+                flex
+                class="search"
+                layout="column"
+                ng-if="adminresource.query"
+                ng-submit="adminresource.submitQuery()"
+            >
+                <div layout="row" layout-align="center center">
+                    <md-input-container layout="row" flex class="md-accent md-hue-3">
+                        <label>{{ ::adminresource.query.label }}</label>
+                        <input ng-model="adminresource.query.model">
+                    </md-input-container>
+                </div>
+            </form>
+            <div layout="column">
+                <div layout="row">
+                    <md-button
+                        ng-click="adminresource.deleteResource()"
+                        aria-label="borrar"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    >
+                        <md-icon md-svg-icon="delete"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            borrar
+                        </span>
+                    </md-button>
+                    <md-button
+                        ng-click="adminresource.saveResource()"
+                        aria-label="guardar"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        ng-if="adminresource.needSave()"
+                    >
+                        <md-icon md-svg-icon="content-save"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            guardar
+                        </span>
+                    </md-button>
+                    <md-button
+                        ng-click="adminresource.editResource()"
+                        aria-label="editar"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        class="md-accent md-hue-1"
+                        ng-if="adminresource.selected.length === 1"
+                    >
+                        <md-icon md-svg-icon="pencil"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            editar
+                        </span>
+                    </md-button>
+                    <!--<md-button
+                        aria-label="opciones"
+                        ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    >
+                        <md-icon md-svg-icon="dots-vertical"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            opciones
+                        </span>
+                    </md-button>-->
+                </div>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content
+        layout="column"
+        md-theme="solucionescucutablank"
+        flex
+        class="md-overflow-hidden"
+    >
+        <md-table-container
+            flex
+            ng-if="adminresource.keys && adminresource.keys.length"
+        >
+            <table
+                md-table
+                md-row-select
+                multiple
+                ng-model="adminresource.selected"
+                md-progress="adminresource.promise"
+            >
+                <thead
+                    md-head
+                    md-order="adminresource.query.order"
+                    md-on-reorder="adminresource.getResources"
+                >
+                <tr md-row>
+                    <th
+                        md-column
+                        md-order-by="{{ ::key }}"
+                        ng-repeat="key in adminresource.keys"
+                        md-numeric="adminresource.isNumeric(null, key)"
+                    >
+                        <span>
+                            {{ ::key }}
+                        </span>
+                    </th>
+                </tr>
+                </thead>
+                <tbody md-body>
+                <tr
+                    ng-repeat="resource in adminresource.list | filter:adminresource.query.filter"
+                    md-row
+                    md-select="resource"
+                    md-select-id="id"
+                    md-auto-select
+                >
+                    <td
+                        md-cell
+                        ng-repeat="key in adminresource.keys"
+                        ng-click="adminresource.updateResource($event, resource, key)"
+                        ng-class="{
+                            'md-placeholder': !resource[key],
+                            'md-selected':  resource.$updated[key]
+                        }"
+                    >
+                        <md-button
+                            ng-click="adminresource.showListData(resource, key)"
+                            ng-if="adminresource.isCollection(resource[key], key) && resource[key].length > 0"
+                            aria-label="{{ ::(resource[key].length + ' ' + key) }}"
+                        >
+                            {{ (resource[key].length + ' ' + key) }}
+                        </md-button>
+                        <span
+                            ng-if="adminresource.isRelation(resource[key], key)"
+                            data-pempo="{{ adminresource.attrs[key] }}"
+                            aria-label="{{ ::((resource[key].nombre || resource[key]) + '') }}"
+                        >
+                            <md-select
+                                ng-if="!adminresource.attrs[key].enum"
+                                ng-model="resource[key]"
+                                placeholder="{{ ::key }}"
+                                md-on-close="adminresource.checkChange(key, resource)"
+                                data-md-container-class="md-select-header-container"
+                                md-on-open="adminresource.loadOptions(key, resource)"
+                                ng-model-options="{trackBy: '$value.id'}"
+                            >
+                                <md-select-header class="md-select-header">
+                                    <input
+                                        ng-model="adminresource.search[key].model"
+                                        type="search"
+                                        placeholder="{{ ::adminresource.search[key].label }}"
+                                        class="md-header-searchbox md-text"
+                                    />
+                                </md-select-header>
+                                <md-option
+                                    ng-repeat="obj in adminresource.options[key] | filter:adminresource.search[key].filter"
+                                    ng-value="obj"
+                                > {{ ::(obj.nombre || obj.username || obj) }}</md-option>
+                            </md-select>
+                            <md-select
+                                ng-if="adminresource.attrs[key].enum"
+                                ng-model="resource[key]"
+                                placeholder="{{ ::key }}"
+                                md-on-close="adminresource.checkChange(key, resource)"
+                                data-md-container-class="md-select-header-container"
+                                md-on-open="adminresource.loadOptions(key, resource)"
+                            >
+                                <md-select-header class="md-select-header">
+                                    <input
+                                        ng-model="adminresource.search[key].model"
+                                        type="search"
+                                        placeholder="{{ ::adminresource.search[key].label }}"
+                                        class="md-header-searchbox md-text"
+                                    />
+                                </md-select-header>
+                                <md-option
+                                    ng-repeat="obj in adminresource.options[key] | filter:adminresource.search[key].filter"
+                                    ng-value="obj"
+                                > {{ ::(obj.nombre || obj.username || obj) }}</md-option>
+                            </md-select>
+                        </span>
+                        <div
+                            ng-if="adminresource.isDate(resource[key], key)"
+                            md-highlight-text="adminsresource.query.model"
+                            md-highlight-flags="^i"
+                        >
+                            {{ ::adminresource.getDateHumanized(resource[key], key) }}
+                        </div>
+                        <div
+                            ng-if="adminresource.isString(resource[key], key) || adminresource.isNumeric(resource[key], key)"
+                            md-highlight-text="adminsresource.query.model"
+                            md-highlight-flags="^i"
+                        >
+                            {{ ::(resource[key] || 'Edit') | truncate:140 }}
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+
+        <md-table-pagination
+            md-limit="adminresource.query.limit"
+            md-limit-options="[10, 15, 25, 40]"
+            md-page="adminresource.query.page"
+            md-total="{{ adminresource.count }}"
+            md-on-paginate="adminresource.getResources"
+            md-page-select
+            md-label="{{ ::adminresource.labelpagination }}"
+        ></md-table-pagination>
+    </md-content>
+</md-card>
+

@@ -22,28 +22,55 @@
 
 module.exports.routes = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
-  * etc. depending on your default view engine) your home page.              *
-  *                                                                          *
-  * (Alternatively, remove this and add an `index.html` file in your         *
-  * `assets` directory)                                                      *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * Make the view located at `views/homepage.ejs` (or `views/homepage.jade`, *
+     * etc. depending on your default view engine) your lista page.              *
+     *                                                                          *
+     * (Alternatively, remove this and add an `index.html` file in your         *
+     * `assets` directory)                                                      *
+     *                                                                          *
+     ***************************************************************************/
 
-  '/': {
-    view: 'homepage'
-  }
+    /*'/': {
+        view: 'homepage'
+    },*/
+    '/': 'IndexController.index',
 
-  /***************************************************************************
-  *                                                                          *
-  * Custom routes here...                                                    *
-  *                                                                          *
-  * If a request to a URL doesn't match any of the custom routes above, it   *
-  * is matched against Sails route blueprints. See `config/blueprints.js`    *
-  * for configuration options and examples.                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * Custom routes here...                                                    *
+     *                                                                          *
+     * If a request to a URL doesn't match any of the custom routes above, it   *
+     * is matched against Sails route blueprints. See `config/blueprints.js`    *
+     * for configuration options and examples.                                  *
+     *                                                                          *
+     ***************************************************************************/
+
+    // OAuth
+    '/auth': 'OAuthController.token',
+    '/auth/info': 'OAuthController.token-info',
+
+    // Usuario
+    '/auth/current': 'UsuarioController.current',
+    '/auth/register': 'UsuarioController.register',
+    '/auth/verify/:email': 'UsuarioController.verify',
+
+    // Cliente
+    //'/auth/cliente/register': 'ClienteController.register',
+    //'/auth/cliente/verify/:email': 'ClienteController.verify',
+
+    // Index
+    '/session': 'IndexController.session',
+    'get /files/:filesname': 'ArchivoController.openFile',
+    '/file-form': 'ArchivoController.putFileForm',
+    'post /upload': 'ArchivoController.putFile',
+    /*'get /files': 'ArchivoController.getFile',
+    'get /download/:filesname': 'ArchivoController.getFile',
+    'post /files': 'ArchivoController.putFile',
+    'delete /files/:filesname': 'ArchivoController.removeFile'*/
+
+    '/hateoas/:model': 'IndexController.findModelAction',
+    '/params/:model': 'IndexController.paramsAction'
 
 };

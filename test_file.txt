@@ -1,0 +1,373 @@
+lista de clientes psd solucionescorporativas 
+
+cleinte                                     gerente o propietario               direccion                 telefono         afiliado        estado        obeservaciones
+
+1 tienda de ropa KAMEL BOTIQUE                EDDY                           av 4 entre cll 10 y 11     304 614 8565         no            fase 2        desrrollo web
+2 tiendas de ropa señora lucy                 lucy                           cll 11 entre 5 y 4                              no            fase 2         socialmedia 
+3 hotel tonchala                                                             av 0 con 9 esquina                              no             fase 2       social media
+4 hotel luxor                                ivone                           cll 11 entre 3 y 4                              no            fase 1        social media
+5 blush moda y demas                                                         cll 11 entre 5 y 4                              no           fase 2         socialmedia
+6 c.c las mercedes                            jorge parra                     av  7 con cll 5 equina                          no            fase 1        social media                              
+7 c.c el oiti                                liliaan arias                   av 7 con cll 10 esquina                         si           pendiente       por cerrar 
+8 famico turismo S.A.S                       amilcar mirep                   calle 11 entre 2 y 3                            si          en contrato      social media 
+9 lavomaxi                                   jorge                           cll 19 entre 1 y 0                              no            fase 1          todo         
+10 luna roman inmobiliaria                    korina roman                    cll 10 entre 2 y 3                              no           fase 1          todo
+11 inversiomnes cortinferp                    luis fernando pabon             c.c mercedes local 11                           no             informar       directorio
+12 comiunicaciones uriad                      adolfo uribe                    c.c mercedes local 5                            si           por cobrar       directorio
+13 varidades joma                             manuel ardila                   c.c mercedes local 174                          si           activo          directorio 1
+14 casino el dorado                                                           c.c mercedes local 365                          no           informar         todo
+15 variedades mario js                       mario                           c.c mercedes local                              no           informar         directporio                           
+16 peluquria isabel del castillo             elisabet del castillo           c.c mercedes local 29                           no           infortmar        directorio
+17 tienda alberto vo5                                                        c.c mercedes local                              no           informar         directorio 
+18 restaurante donde dñ rosa                                                 c.c mercedes local                              no           informar         directorio
+19 viveres el rey                                                            c.c mercedes local                              no           informar         directorio
+20 mantenimiento mv                                                          c.c mercedes local                              no           informar         directorio
+21 viveres la bendicion                      ciro                            cll 5 # 6-64                                    no           informado        de baja
+22 productos naturales genesis               pedro                           terminal de transportes                         no           informado        de baja
+23 platifibras                                                               av 6 # 0                                        no           informar         directorio
+24 sincronizados herrera                                                     av 6 # 1n                                       no           informado        no se afilio
+25 cami alarmas                                                              av 6 # 1n                                       no           informado        de baja
+26 elctrico andres                                                           cll 1n                                          no           informar         directorio
+27 mecanico jnon                                                             cll 1n                                          no           informar         directorio                   
+28 danieluv                                  jhon                            av 5 # 0n                                       no           informado        no se afilio 
+29 viveres y abarrotes                                                       av 5  entre 6 y 5                               no           informar         directorio
+30 variedades el gordo                                                       cll 5  entre 6 y 7                              no           infotmar         directorio
+31  doctor audio ojitos                                                       cll 9 entre 8 y 9                              si           activo           directorio 1
+32 viveres he&kar                                                            av 6   entre 5 y 6                              no           infotrmar        directorio
+33 lumatex                                 luding                            c.c ,as mercedes local                          si           activo          directorio 1
+34 artesanias unicentro                                                      av 6   entre 5 y 6                              no            informado       de baja                                                         
+35 viveres nr                                                                av 6   entre 5 y 6                              no           informar         directorio
+36 calzado yeksos                                                            av6    entre 7 y 8                              no           infortmar        directorio
+37 richard                                 richard                           c.c alejandria                                  no           informar          directorio                                             
+38 venta de envases plasticos              luis angel                        cll 6 entre 8 y 9                               no           informar         directorio                  
+39 vitrinas                                                                  av 8  entre 7 y 8                               no           informar          directorio
+40 peluqueria gleyur                         glenis yurley                   cll 7 entre 6 y 8                               no           informar          directorio                   
+41 vidreria y marqueteria florez             edgar florez                    av 8  entre 7 y 8                               no           informar          todo              
+42 mision corporativa                        karen oyola                     c.c san jose local 47                           no           informado         de baja 
+43 creaciones gerange                                                        c.c oiti local                                  no           informar          dorectorio
+   millan fashion                            cristina                        c.c oiti local                                  si           activo           directorio 2
+44 rey de reyes                                                              c.c oiti local                                  no           informar          directorio
+45 tienda de ropa para cabsllero             jorge                           c.c oiti local                                  no           informar          directorio
+46 creaciones emy                            diego                           c.c ficus                                       si           en proceso        directorio
+47 vision centrer                                                            c.c ficus                                       no           informar          directorio 
+48cambios goyo                              gregorio                        c.c  ficus                                      no           informar          directorio
+49 lesk camaras                                                              c.c oiti local                                  si          en proceso         directorio                             
+50 patikas shoes                            german                           c.c oiti local                                  no           informar          directorio 
+51 spring shoes                             liliana                          c.c oiti local                                  no           informar          directorio
+52 variedades el detallito                  elba                             c.c oiti local                                  no            informar          directorio
+53 vestidos de peimera comunion y ropa                                       c.c oiti local                                  no            informar          directorio
+   tienda de disfraces y vestidos                                            c.c el oiti                                     no            en proceso        directorio
+54 baby kiss                                betty                            cll 12 entre 7 y 6                              no            informado          de baja
+55 swett baby                                                                cll 12  entre 7 y 8                             no            informar          directorio
+56 sueño interior                                                            cll 12  entre 7y 8                              no            informar          directorio
+57 variedades cheviton                                                       c.c la estrella                                 no            informado          de baja
+58 tienda de ropa de bebe                                                    cll 12 entre 5 y 4                              no            infortmar        directorio
+59 telecucuta                                jesus gallardo                  av 5 en tre 12 y 13                             no       en conversaciones   social media                           
+60 el marquez                                amad taja                        clle 11 entre 4 y 5                            no         informado          no afiliado
+61 baraka multistore                                                         av 4  con cll 11 esquina                        no          informado           de baja
+62 bachir mirep corona concejal              bachir mirep corona                                                             si        en conntrato       social media          
+63 planeta rebook                                                             cll 10 entre 5 y 4                             no          informar          directorio                            
+64 bmk sport                                                                  cll 10 entre 4 y 3                             no          informar         directorio                                 
+65 celuestuches                                                                c.c el palacio                                no           informar         directorio 
+66 mauris comunicaciones                       yesenia                         c.c el palacio                                no            informado         de baja
+67 isavivicel                                 isabel                            c.c el palacio                               no           informar          directorio                    
+68 celuphone                                  mario izquierdo                    c.c el palacio                              no            informar         directorio
+69 yantai accesorios                                                            c.c el palacio                               no             informado       en proceso 
+70 celulares prima                            fabiola rojas                   c.c el palacio                                 no              informado       en proceso
+71 celulares flaca y cflaco                                                   c.c el palacio                                 no              informar        directorio
+72 jr.com                                                                      c.c el palacio                                si             informado        en proceso
+73 leidy cell                                 hernan pulgarin                 c.c el palacio                                 si            por cobrar        directorio
+74 la mozorca                                 mauricio                        av 4 entre 9 y 10                              no           fase 1              todo 
+75 one mobile                                 fabian                          c.c el palacio                                 no            informado        no AFILIADO     
+76 relojeria suarez                           eduardo suarez                   av 4  ENTRE 8 Y 7                             no             informar       directorio
+77 el palacio de donhugo                      hugo                            av 4  ENTRE 8 Y 7                              no              informar      directorio
+78 hotel olimpic                              eriberto                        calle 2 entre 3 y 4                            no              informar      directorio
+79 creaciones kairos                          dilia                           prados norte                                   si             activo        directorio 2
+80 sais ambualancias                          pedro                           prados norte                                   no            informar      directorio
+81 ferreteria arboledana                      eduardo                         prados norte                                   no            infortmado    no afiliado
+82 frutas ino                                 inocencia hernandez             cenabastos                                     no            informar       directorio
+83 venta de tomate prado                      elias prado                      cenabastos                                    no            informar       directorio                   
+84 el castillo de panza                                                       cenabastos                                     no             informar      directorio
+85 la caseta de la tia marlop                                                 cenabastos                                     no             informar      directorio
+86 lubrirepuestos la nueva sexta                                             nueva sexta                                    no             informado     no afiliado 
+87 venta de gallinas cristian                 cristian                        nueva sexta                                    no             informar       directorio     
+88 esoterica jose gregorioo hernandez                                         nueva sexta                                    no             informar        directorio
+89 el cuarzo perfumeria esoterica                                             nueva sexta                                    no             informado      no afiliado
+90 montallantas el rencauche                                                  el salado                                      no              informado     directorio
+91 salon de belleza solo chicas               andrea gelvez                    av 11e # 7n-64                                 no             informar       directorio
+92 delijugos                                                                  cll 7n                                         no              informar       directorio
+93 decoracion de eventosa liz                 liz                             la libertad                                    no              informar       directorio
+94 pizeria sebas                                                              la libertad                                    si               activo      directorio 2    
+95 panderia y heladeria daniela                                               la libertad                                    no              informar       directorio
+96 respuestos de moto vesga lara              pedro vesga                     la libertad                                    si              en proceso   directorio 2
+97 silenciadores timonza                      hector                          san luis                                       si              por cobrar    directorio
+98 restaurante eñ sabor fronnterizo           maria                            san luis                                      no                informar     directorio
+99 casa de cambios el catire moises           moises                          la parada                                      si               activo       directorio 1
+100 don toto cambista                          toto                            la parada                                      no                de baja     directorio
+101 panaderia bumanguesa                       javier                          los patios                                     no               informar     directorio
+102 panaderia                                  joaquin                         llos patios                                    no               informar     directoio
+103 peluqueria vecina liliana                                                  los patios                                     no               informar     directrio
+104 el paisa elctrico                                                           los patios                                    no               infpormar    directororio
+105 la tienda de vale                                                          tienda virtual                                si               activo       directorio 1
+106 servicio tecnico 4g                        fabian                           la pastora                                    si               abono        directorio 1
+107 victor mercado diseño de modas             victor mercado                   la pastora                                    si               activo       directorio
+    ornamentacion guarin                       hugo guarin                      la pastora                                    no                informar    directorio
+108  carniceria donde chejo y yima                                               sardinata                                     no               informar     directorio
+109 compra de cafe y cacao frontera            javier                           sardinata                                     no               informar     directorio
+110 remates la pricipal                                                         sardinata                                     no               informar     directorio
+111 efecty sardinata                                                            sardinata                                     no               informar     directorio
+112 peluqiueria emy                                                             la curva                                      no               informar     directorio
+113 fuente de soda jhonaran                                                     la curva                                       no             informar     directorio                                                                                                                                                             
+115 restaurate donde lucy                                                       la curva                                       no             informar     directorio
+116 restaurante don edgar                                                       la curva                                       no              informar     directorio
+117 hospedaje y eds el oasis                                                    la curva                                       no             informar     directorio
+118 comparade cafe y tieenda y secdora la julia                                la curva                                       no             informar     directorio
+119 retaurante las morochas                                                    la curva                                        no            informar     directorio
+120 restaurante buenos aires                                                   la curva                                        no           informar     directorio
+121 restaurante cefeteria y variedades alto el pozo                            la curva                                        no            informar     directorio
+122 montallantas alto el pozo                                                  la curva                                        no            informar     directorio
+123 jj pita y cia sa                    ELIANA CHABARRO                        nor desantander      320 489 1159               no            fase 1         todo
+
+
+INVERSIONES A REALIZAR EN LA EXPANSION DEL PROYECTO SOLUCIONES CUCUTA
+
+EN LO INMEDIATO
+
+1.  ADECUAR  EL AREA DE SOCIAL MEDIA, REPARAR PAREDES CUYA INVERSION ES DE 10.000, AGREGAR TABLERO CUYA COSTO ES DE 20000 Y REPARAR EL MOBILIARIO Y DARLE UNA TONALIDAD 
+   ROJA CUYA INVERSION ES DE 10000 Y ASI MISMO IMPRIMIR UN VINILO PARA ADECUAR EL MUEBLE CUY0 COSTO ES DE 8.00O
+  
+TOTAL.........................................................48.0000
+
+2. ADQUIRIR PLAN DE MINUTOS PARA EL LLAMADO DE LA LISTA DE PROSPECTOS Y CLIENTES ASI MISMO PARA LA UTILIZACION DE LA LISTA DE LAS 300 EMPRESAS QUE TENEMOS POR 
+   PARTE DE LA CAMARA DE COMERCIO. EL VALOR DE DICHO PLAN ES 80.000 PESOS AL MES  PROMEDIO
+
+
+TOTAL ....................................................80.000 MENSUALES
+
+3 UBICAR VALLAS EN PUNTOS ESPECIFICOS DE LA CIUDAD, ESTOS PUNTOS SON:
+
+1 AUTOPISTA A ATALAYA .....................................HECHA
+2 AUTOPISTA  A LOS PÁTIOS..................................20.000  
+3 CENTRO COMERCIAL LAS MERCEDES AV 7.......................14.000 
+4 CENTRO COMERCIAL LAS MERCEDES AV 6....................... 7.000
+5 AUTOPISTA UREÑA CUCUTA SILENCIADORES TIMONZA............. a definir 
+6 AUTOPISTA VILLA DEL ROSARIO............................ a definir
+7 AUTOPISTA PUERTO SANTANDER............................. a definir
+
+4. HACER CAMBIO DEL HOSTING POR VALOR DE 30.000 PESOS MENSUALES Y ASI MISMO LA  VISUALIZACION DEL SITIO WEB. P
+
+5. CONTRATAR SECRETARIA PARA QUE SE ENCARGUE DE LA ABMINISTRACION DE LA WEB POR VALOR DE 600.000 PESOS MENSUALES
+
+6. CONTRATAR ASESORES COMERCIALES EN CONVENIO CPN PSD SOLUCIONES CORPORATIVAS
+
+7. HACER 6  PORTAFOLIOS DE SERVICIOS  POR VALOR DE 24.000
+
+PROPOCICIONES DE SOLUCION E INCREMENTO DE LAS VENTAS 
+
+generar 6 zonas de posicionamoento en los lugares donde se poseen pocos o ningun cliente a fin de impactar y promover la marca, los produtos y servicios ofertados. 
+                    estas zonas seran: 
+
+1 zona oriente:   comprende la ciudadela de la de la libertad, san luis, el escobal, zona comercial del anillo vial oriental,  prados del este, 
+                   centro comercial bolivar, avenida demetrio mendoza,
+
+2 zona sur oriente: comprende los municipios de los patios y villa del rosario, lo concerniente al anillo vial oriental perteneciente
+                    a estos dos municipios y el centro comercial de la glorieta a los patios y bellavista
+
+3 zona norte      :    comprende el sectror de cenabastos, el salado, la ciudadela de el areopuerto la ave 7 desde su inicio en el terminal de trasportes,
+                      la av las americas hasta su fin en el cruce que da a chapinereo
+
+4 zona occidente  : comprende la ciudadela de atalaya incluyendo el tramo de la av las americas superior al cruce donde finaliza la zona norte, 
+                   ademas comprende tambien los barrios de de cundinamarca, los alpes  LA LOMA DE BOLIVAR y el centro comercial del terminal de trasportes
+                   y la cuadra donde se ubica.
+
+5 zona sur occidente: comprende los barrios de la pastora, belen,  el sectro de miraflores y la zona comercial del cementerio municipal asi mismo 
+                      la av 14 que recorre san jose Y LLEVA A LA DESEMBOCADURA DE LA AV CANAL BOGOTA  los barrios de lopez, circunvalcion, el paramo 
+                      la av libertadores desde la calle 15 hasta su desembucadura en la zona del batallon y el area comercial que esta encierra
+
+6 zona centro : comprende el centro de la ciudad desde la calle 14 hasta la calle AV 7 del barrio la merced asi mismo inicia en la av 13 del centro y finaliza en 
+                LIBERTADORES  HASTA EL CENTRO COmERCIAL UNICENTRO SUMANDO A ESTA ZONA LA ZONA INDUSTRIAL PASANDO LA AV 7 SIN ICLUIR LA MISMA, LOS BARRIOS DE PRADOS 
+                NORTE, GUAMARAL, COLPE, QUINTA ORIENTAL , LA CEIBA, POPULAR, LA aV GRAN COLOMBIA Y TODO EL CENTRO COMERCIaL Y FINALCIERO DE LA CIUDAD
+
+
+POYECCION DE VENTAS Y EGRESOS CON 6 ASESORES SERVICIO DIRECTORIO WEB
+
+VENTAS POR SEMANA 
+
+MAXIMO:    10 AFILIACIONES AL DIRECTORIO  POR ASESOR.................. 1.000.000 A 600.000 DEPENDIENDO DEL PLAN AFILIADO    
+MEDIO:     6  AFILIACIONES AL DIRECTORIO CADA ASESOR  ...................   600.000 A 360.000 DEPENDIENDO DEL PLAN AFILIADO  
+BAJO       3 AFILIACIONES AL DIRECTORIO CADA ASESOR.....................   300.000 A 180.000 DEPENDIENDO DEL PLAN AFILIADO  
+
+
+VENTAS TOTALES POR SEMANA 
+
+MAXIMO:    6.000.000 A 3.600.000
+MEDIO:     3.600.000 A 2.160.000
+BAJO:      1.800.000 A 1.080.000
+
+VENTAS TOTALES  POR MES 
+
+MAXIMO:    24.000.000 A 14.400.000
+MEDIO:     14.400.000 A  8.640.000
+BAJA :      7.200.000 A  4.320.000
+
+COSTOS DE COMISIONES POR SEMANA
+
+ALTO:  1.200.000 A 720.000 DE COMISIONES ASESORES 
+MEDIO:   540.000 A 324.000 DE COMISIONES ASESORES 
+BAJO     -----------------MDE COMISIONES ASESORES   
+
+COSTOS DE COMISIONES POR MES
+
+ALTO :     4.800.0000 A 2.880.000 DE COMISIONES ASESORES 
+MEDIO:     2.160.000  A 1.296.000 DE COMISIONES ASESORES  
+BAJO:      ------------------------- COMISIONES ASESORES 
+
+
+EGRESOS FIJOS MENSULES
+
+INTERNET :             40.000
+ARRIENDO 1:            50.000
+SALARIO PER ADMI:     800.000
+DISEÑADOR GRAFICO:    700.000
+SECRETARIA:           600.000
+TELEFONO CELULAR:      80.000
+COMUNITY MANAGER:     700.000
+
+
+TOTAL...............2.970.000    
+
+UTILIDADES PROMEDIO EN EL MES
+
+MAXIMO: 16.230.000 O 8.550.000
+MEDIO:   9.270.000 O 4.474.000
+MINIMO   4.230.000 O 1.350.000      
+                  
+
+INGRESO POR OTROS SERVICIOS OFERTADOS 
+
+SOCIAL MEDIA Y ABMINISTRACION WEB 
+
+CONTRATOS  ACTUALES
+
+BACHIRMIREP CORONA : 120.000 AL MES 
+FAMICO TURISMO     : 300.000 AL MES 
+
+TOTAL..............  420.000 
+
+DESARROLLO Y DISEÑO  WEB
+DESARROLLO Y DISEÑO  MULTIMEDIA
+PUBLICIDAD DIGITAL:
+
+TABLA DE PEODUCTOS Y SERVICIOS SOCLUCIONES CUCUTA
+
+PRODUCTO                                         VALOR                                        DESCIPCION
+
+DIRECTORIO WEB BASICO.......................... 60.000
+DIRECTORIO WEB SOCIALMEDIA INICIO..............100.000
+DIRECTORIO WEB PRIMIUM.........................200.000
+DIRECTORIO WEB PAGINA INICIO...................150.000 INSCRIPCION + 15.000 MENSUALES 
+DIRECTORIO WEB TIENDA VIRUTUAL INICIO..........150.000 INSCRIPCION + 30.000 MENSUALES
+SOCIAL MEDIA  PAQUETE INICIO...................150.000 AL MES                          1 CONTENIDO DIARIO EN FACEBOOK Y TWITTER
+SOCIAL MEDIA PAQUETE BASICO ...................250.000 AL MES                          2 CONTENIDOS DIARIOS EN FACEBOOK Y TWITTER Y 1 CONTENIDO EN INSTAGRAM
+SOCIAL MEDIA PYMES.............................450.000 AL MES                          3 CONTENIDOS DIARIOS EN FACEBOOK Y TWITTER 2 EN  INSTAGRAM 1 CAMPAÑA 
+                                                                                         DE IMPACTO ABSAJO TRAFICO
+SOCIAL MEDIA PLUSS.............................600.000 AL MES                          6 CONTENIDOS DIARIOS EN FECEBOOK TWITTER  Y 3 EN INSTAGRAM  1 CAMPAÑA 
+                                                                                         DE IMPACTO DE MEDIANO TRAFICO
+SOCIAL MEDIA PRIMIUM...........................900.000 AL MES                          8 CONTENIDOS SIARIOS EN FACEBOOK Y TWITTER Y 4 EN INSTAGRAM  1 CAMPAÑA 
+                                                                                         DED IMPACTO DE ALTO TRAFICO 
+SOCIAL MEDIA SUPER PRIMIUM....................1.300.000 AL MES                        10 CONTENIDOS DIARIOS EN FACEBOOK Y TWITTER  Y 5 EN INSTAGRM  1 CAMPAÑA 
+                                                                                         DE IMPACTO  DE ALTO TRAFICO + CANAL DE YOU TUBE Y VIDEO AUDIOVISUAL DE 1
+                                                                                         A 3 MINUTOS 
+SOCIAL MEDIA MULTIMEDIA AUDIO VISUAL......... 1.500.000 AL MES                         10 CONTENIDOS DIARIOS EN FACEBOOK Y TWITTER  Y 5 EN INSTAGRM  1 CAMPAÑA 
+                                                                                         DE IMPACTO  DE ALTO TRAFICO + CANAL DE YOU TUBE Y VIDEO
+                                                                                         MULTIMEDIA 2D DE 1 A 3 MINUTOS O AUDIOVISUAL DE 1 A 5 MIN
+SOCIAL MEDIA SUPER MULTIMEDIA.................2.O00.000 AL MES                         12 CONTENIDOS DIARIOS EN FACEBOOK Y TWITTER  Y 6 EN INSTAGRAM 1 CAMPAÑA 
+                                                                                         DE IMPACTO  DE ALTO TRAFICO +  YOU TUBE CON  VIDEO 
+                                                                                         MULTIMEDIA ANIMADO BASICO DE 1 A 5 MINUTOS  
+
+ABMINISTRACION WEB BASICO.................... 60.000 AL MES                             1 CONTENIDOS A LA SEMANA  
+ABMINISTRACION WEB PYMES.....................100.000 AL MES                             2 CONTENIDOS A LA SEMANA
+ABMINISTRACION WEB PLUSS.....................150.000 AL MES                             3 CONTENIDOS A LA SEMANA
+
+DESARROLLO WEB PAGINA BASICA.................650.000
+DESARROLLO WEB PAGINA PLUSS .................900.000
+TIENDA VIRUTUAL
+APLICATIVO WEB 
+APLICATIVO MOVIL
+PERSONALIZACION
+ADICIONALES
+
+
+VIDEO AUDIVISUAL 1 A 3 MINUTOS FILMACION............ 250.000
+VIDEO AUDIVISUAL 1 A 3 MINUTOS  EDICION............. 150.000
+VIDEO AUDIO VISUAL FILAMCION Y EDICION 1 A 3 MIN.....350.000
+VIDEO MULTIMEDIA 2D 1 A 3 MIN....................... 400.000
+VIDEO MULTIMEDIA 3D 1 A 3 MIN....................... 600.000
+VIDEO AUDIVISUAL 1 A 5 MINUTOS FILMACION............ 350.000
+VIDEO AUDIOVISUAL 1 A 5 MINUTOS EDICION..........    200.000
+VIDEO AUDIOVISUAL EDICION Y FILAMCION 1 A 5 MIN..... 500.000
+VIDEO MULTIMEDIA 2D 1 A 5 MIN....................... 500.000
+VIDEO MULTIMEDIA 3D 1 A 5 MIN....................... 800.000
+
+DISEÑO PUBLICITARIO  PARA WEB PORTADA REDES SOCIALES TWITER Y FACEBOOK.......  25.000
+DISEÑO POSTALES PUBLICITARIAS INSTAGRAM....................................... 15.000
+DISEÑO POSTALES PUBLICITARIAS FACEBOOK Y TWIITER.............................. 15.000
+PORTADA VERTICAL PARA WEB..................................................... 20.000
+ASES0RIA CAMPAÑAS VIRUALES....................................................150.000 
+DESARROLLO CAMPAÑA WEB PARA REDES SOCIALES Y WEB..............................500.000
+                                                                  
+                                         
+INVERSIONES A REALIZAR HECHO EL CUMPLIMIENTO DE LAS PROYECCIONES
+
+EN EL PRIMER TRIMESTRE DEL AÑO
+
+1.AFILIACION  A A LA CAMARA DE COMERCIO......................
+2 PAGO CAMPAÑA EN REDES SOCIALES. FACEBOOK Y TWITTER...............
+3 LANZAMIENTOP A NIVEL LOCAL ...........................
+
+
+SEGUNDO TRIMESTRE DEL AÑO 
+
+1 EJECUTAR ALIZANZA PEMPO - SOLUCIONESCUCUTA A FIN DE EMPEZAR A PROMOVER PROYECTO CONSORCIO CENTRO INTERNACIONAL DE NEGOCIOS EL OITI
+2 COMPRA DE LOCALES Y EQUIPOS:COMPUTADORES - CAMARAS ETC
+3 POSISIONAR SOLUCIONES CUCUTA EN TODO EL MUNICIPIO Y SU AREA METROPOLITANA MEDIANTE LA PAUTA EN PANTALLAS INTELIGENTES
+
+
+
+
+
+PLAN DE VENTAS PARA ASESORES
+
+EL PLAN DE VENTAS PARA ASESORES SERA EL SIGUIENTE 
+
+PLAN DE COMISIONES SERVICIO DIRECTORIO WEB
+
+1 -DE 0 A 3 AFILIACIACIONES SEMANALES 5 % de comision recursos destinados al salario basico de los asesores
+
+2 -DE 0 A 4 AFILIACIACIONES SEMANALES 10% D COMISION DEL VALOR DEL PAQUETE VENDIDO
+
+2 -DE 0 A 6 AFILIACIACIONES SEMANALES 15% D COMISION DEL VALOR DEL PAQUETE VENDIDO
+
+2 -DE 0 A 10 AFILIACIACIONES SEMANALES 20% D COMISION DEL VALOR DEL PAQUETE VENDIDO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+             

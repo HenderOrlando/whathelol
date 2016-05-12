@@ -1,0 +1,120 @@
+
+.slider {
+    position: relative;
+    width: auto;
+    height: auto;
+    overflow: hidden;
+    > .arrows {
+        position: absolute;
+        md-icon{
+            font-size: 42px;
+        }
+    }
+    > .slide{
+        position: absolute;
+        background-position: center;
+        background-repeat: no-repeat;
+        &.cover{
+            background-size: cover;
+        }
+        &.contain{
+            background-size: contain;
+        }
+        &.ng-hide-add,
+        &.ng-hide-remove{
+            -webkit-transition: all ease-in-out 0.5s;
+            -moz-transition: all ease-in-out 0.5s;
+            -o-transition: all ease-in-out 0.5s;
+            transition: all ease-in-out 0.5s;
+            display: block!important;
+        }
+        &.top{
+            &.ng-hide-remove,
+            &.ng-hide-add.ng-hide-add-active{
+                &.fade{
+                    opacity: 0;
+                }
+                -webkit-transform: translate(0,-100%);
+                -moz-transform: translate(0,-100%);
+                -o-transform: translate(0,-100%);
+                transform: translate(0,-100%);
+            }
+            &.ng-hide-add,
+            &.ng-hide-remove.ng-hide-remove-active{
+                &.fade{
+                    opacity: 1;
+                }
+                -webkit-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+            }
+        }
+        &.bottom{
+            &.ng-hide-remove,
+            &.ng-hide-add.ng-hide-add-active{
+                &.fade{
+                    opacity: 0;
+                }
+                -webkit-transform: translate(0,100%);
+                -moz-transform: translate(0,100%);
+                -o-transform: translate(0,100%);
+                transform: translate(0,100%);
+            }
+            &.ng-hide-add,
+            &.ng-hide-remove.ng-hide-remove-active{
+                &.fade{
+                    opacity: 1;
+                }
+                -webkit-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+            }
+        }
+        &.left{
+            &.ng-hide-remove,
+            &.ng-hide-add.ng-hide-add-active{
+                &.fade{
+                    opacity: 0;
+                }
+                -webkit-transform: translate(-100%,0);
+                -moz-transform: translate(-100%,0);
+                -o-transform: translate(-100%,0);
+                transform: translate(-100%,0);
+            }
+            &.ng-hide-add,
+            &.ng-hide-remove.ng-hide-remove-active{
+                &.fade{
+                    opacity: 1;
+                }
+                -webkit-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+            }
+        }
+        &.right{
+            &.ng-hide-remove,
+            &.ng-hide-add.ng-hide-add-active{
+                &.fade{
+                    opacity: 0;
+                }
+                -webkit-transform: translate(100%,0);
+                -moz-transform: translate(-00%,0);
+                -o-transform: translate(100%,0);
+                transform: translate(100%,0);
+            }
+            &.ng-hide-add,
+            &.ng-hide-remove.ng-hide-remove-active{
+                &.fade{
+                    opacity: 1;
+                }
+                -webkit-transform: translate(0,0);
+                -moz-transform: translate(0,0);
+                -o-transform: translate(0,0);
+                transform: translate(0,0);
+            }
+        }
+    }
+}

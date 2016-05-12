@@ -15,7 +15,7 @@ module.exports.views = {
 
   /****************************************************************************
   *                                                                           *
-  * View engine (aka template language) to use for your app's *server-side*   *
+  * View engine (aka template language) to use for your blog's *server-side*   *
   * views                                                                     *
   *                                                                           *
   * Sails+Express supports all view engines which implement TJ Holowaychuk's  *
@@ -64,7 +64,7 @@ module.exports.views = {
   * If you're using the default `ejs` or `handlebars` Sails supports the use  *
   * of multiple `layout` files. To take advantage of this, before rendering a *
   * view, override the `layout` local in your controller by setting           *
-  * `res.locals.layout`. (this is handy if you parts of your app's UI look    *
+  * `res.locals.layout`. (this is handy if you parts of your blog's UI look    *
   * completely different from each other)                                     *
   *                                                                           *
   * e.g. your default might be                                                *

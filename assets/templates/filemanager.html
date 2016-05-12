@@ -1,0 +1,347 @@
+<md-dialog
+    md-theme="solucionescucutablank"
+    class="layout-fill"
+    aria-label="filemanager"
+>
+    <md-toolbar class="md-accent md-hue-1">
+        <div
+            ng-class="{
+                    'layout-column': !isPortrait,
+                    'layout-row': isPortrait
+                }"
+        >
+            <div layout="row">
+                <span flex layout="column" layout-align="center center">
+                    {{ filemanager.title | uppercase }}
+                </span>
+                <form
+                    ng-if="isPortrait"
+                    flex
+                    layout="column"
+                    ng-if="filemanager.query"
+                    ng-submit="filemanager.loadFiles()"
+                >
+                    <div layout="row" layout-align="center center">
+                        <md-input-container layout="row" flex>
+                            <label>{{ ::filemanager.query.label }}</label>
+                            <input ng-model="filemanager.query.model">
+                        </md-input-container>
+                        <md-button
+                            type="submit"
+                            class="md-hue-1 md-primary"
+                            aria-label="{{ ::filemanager.query.button.label }}"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="{{ ::filemanager.query.button.icon }}"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                {{ ::filemanager.query.button.label }}
+                            </span>
+                        </md-button>
+                        <md-button
+                            ng-click="filemanager.clearQuery($event)"
+                            class="md-primary md-hue-3"
+                            aria-label="clear"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="recycle"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                limpiar
+                            </span>
+                        </md-button>
+                        <md-button
+                            ng-show="!filemanager.onlySelected"
+                            ng-click="filemanager.getOnlySelected($event)"
+                            class="md-primary md-hue-3"
+                            aria-label="seleccionados"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="playlist-check"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                seleccionados
+                            </span>
+                        </md-button>
+                        <md-button
+                            ng-show="filemanager.onlySelected"
+                            ng-click="filemanager.goToPage()"
+                            class="md-primary md-hue-3"
+                            aria-label="todos"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="view-list"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                todos
+                            </span>
+                        </md-button>
+                    </div>
+                </form>
+                <div layout="column" layout-align="center center">
+                    <md-button
+                        class="md-icon-button md-primary md-hue-2"
+                        ng-click="filemanager.cancel($event)"
+                        aria-label="Cerrar"
+                    >
+                        <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+                    </md-button>
+                </div>
+            </div>
+            <div ng-if="!isPortrait" layout="row" layout-align="center center">
+                <form
+                    class="search-file"
+                    flex
+                    layout="column"
+                    ng-if="filemanager.query"
+                    ng-submit="filemanager.loadFiles()"
+                >
+                    <div layout="row" layout-align="center center">
+                        <md-input-container layout="row" flex>
+                            <label>{{ ::filemanager.query.label }}</label>
+                            <input ng-model="filemanager.query.model">
+                        </md-input-container>
+                        <div
+                            ng-if="!filemanager.onlySelected"
+                            layout="row"
+                            layout-align="center center"
+                        >
+                            <md-button
+                                type="submit"
+                                class="md-hue-1 md-primary"
+                                aria-label="{{ ::filemanager.query.button.label }}"
+                                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                            >
+                                <md-icon md-svg-icon="{{ ::filemanager.query.button.icon }}"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                {{ ::filemanager.query.button.label }}
+                            </span>
+                            </md-button>
+                            <md-button
+                                ng-click="filemanager.clearQuery($event)"
+                                class="md-primary md-hue-3"
+                                aria-label="clear"
+                                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                            >
+                                <md-icon md-svg-icon="recycle"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                limpiar
+                            </span>
+                            </md-button>
+                            <md-button
+                                ng-show="!filemanager.onlySelected"
+                                ng-click="filemanager.getOnlySelected($event)"
+                                class="md-primary md-hue-3"
+                                aria-label="seleccionados"
+                                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                            >
+                                <md-icon md-svg-icon="playlist-check"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                seleccionados
+                            </span>
+                            </md-button>
+                        </div>
+                        <md-button
+                            ng-show="filemanager.onlySelected"
+                            ng-click="filemanager.goToPage(true)"
+                            class="md-primary md-hue-3"
+                            aria-label="todos"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="view-list"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                todos
+                            </span>
+                        </md-button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-dialog-content
+        flex
+        layout="column"
+        ngf-drop
+        ngf-drag-over-class="'md-drag-over'"
+        ng-model="filemanager.fileupload"
+        ngf-change="filemanager.changeFilesUpload($files, $file, $newFiles, $duplicateFiles, $invalidFiles, $event)"
+        ngf-multiple="true"
+        ngf-allow-dir="true"
+        ngf-accept="*"
+    >
+        <md-divider></md-divider>
+        <md-content flex>
+            <md-grid-list
+                md-cols="2" md-cols-md="3" md-cols-gt-md="6"
+                md-row-height-gt-md="1:1" md-row-height="4:3"
+                md-gutter="8px" md-gutter-gt-sm="4px" >
+                <md-grid-tile
+                    ng-repeat="file in filemanager.files | filter:filemanager.query.filter"
+                    md-colspan-sm="1"
+                    md-colspan-xs="1"
+                >
+                    <md-button
+                        ng-click="filemanager.selectFile($event, file)"
+                        ng-class="{
+                            'md-hue-1'  : filemanager.hasFileSelected(file),
+                            'md-accent' : filemanager.hasFileSelected(file) && file.src,
+                            'md-warn'   : filemanager.hasFileSelected(file) && !file.src
+                        }"
+                        aria-label="file.nombre || file.name"
+                        layout-fill
+                        class="md-raised"
+                    >
+                        <div layout-fill class="preview-file">
+                            <div
+                                layout-fill
+                                ng-if="file.src && filemanager.isImage(file)"
+                                style="background-image: url('{{ ::file.src }}')"
+                            ></div>
+                            <audio
+                                layout-fill
+                                ng-if="file.src && filemanager.isAudio(file)"
+                                class="md-width-100"
+                                ng-src="{{ ::file.src }}"
+                            ></audio>
+                            <video
+                                layout-fill
+                                ng-if="file.src && filemanager.isVideo(file)"
+                                ng-src="{{ ::file.src }}"
+                            ></video>
+                            <div
+                                layout-fill
+                                ng-if="!file.src && filemanager.isImage(file)"
+                                ngf-thumbnail="file"
+                                ngf-as-background="true"
+                            ></div>
+                            <audio
+                                layout-fill
+                                ng-if="!file.src && filemanager.isAudio(file)"
+                                ngf-src="file"
+                            ></audio>
+                            <!--ngf-background="file"-->
+                            <video
+                                layout-fill
+                                ng-if="!file.src && filemanager.isVideo(file)"
+                                ngf-src="file"
+                            ></video>
+                            <!--ngf-background="file"-->
+                        </div>
+                        <md-grid-tile-footer layout="row">
+                            <md-button
+                                aria-label="delete-file-upload"
+                                ng-click="filemanager.outFilesUpload($event, file)"
+                                ng-if="!file.src"
+                                class="md-raised md-warn md-icon-button"
+                            >
+                                <md-icon md-svg-icon="close"></md-icon>
+                            </md-button>
+                            <span>
+                                {{ file.nombre || file.name }}
+                            </span>
+                        </md-grid-tile-footer>
+                    </md-button>
+                </md-grid-tile>
+            </md-grid-list>
+        </md-content>
+        <!--<div
+            ng-repeat="file in filemanager.files"
+            ng-click="filemanager.selectFile($event, file)"
+        >
+            {{ ::file.nombre }}
+        </div>-->
+        <md-divider></md-divider>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row" layout-align="center end">
+        <div layout="column">
+            <div layout="row" layout-align="center center">
+                <span>
+                    Página:
+                </span>
+                <md-menu>
+                    <md-button
+                        data-pagelist="{{ filemanager.pagelist }}"
+                        ng-click="filemanager.getPageList();$mdOpenMenu($event);"
+                        class="md-icon-button"
+                        aria-label="page"
+                    >
+                        {{ filemanager.pagination.page }}
+                    </md-button>
+                    <md-menu-content width="2">
+                        <md-menu-item ng-repeat="page in filemanager.pagelist">
+                            <md-button
+                                aria-label=" {{ ::page }}"
+                                ng-click="filemanager.goToPage(page)"
+                            >
+                                {{ ::page }}
+                            </md-button>
+                        </md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+                <span>
+                    {{ filemanager.pagination.firstElement + ' - ' + filemanager.pagination.lastElement }}
+                    de
+                    {{ filemanager.pagination.total }}
+                </span>
+                <md-button
+                    ng-disabled="filemanager.isFirstPage()"
+                    aria-label="prev-page"
+                    ng-click="filemanager.prevPage($event)"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <md-icon md-svg-icon="chevron-left"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        Prev
+                    </span>
+                </md-button>
+                <md-button
+                    ng-disabled="filemanager.isLastPage()"
+                    aria-label="next-page"
+                    ng-click="filemanager.nextPage($event)"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <md-icon md-svg-icon="chevron-right"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        Next
+                    </span>
+                </md-button>
+            </div>
+        </div>
+        <span flex></span>
+        <div layout="column">
+            <div layout="row" layout-align="center center">
+                <md-button
+                    ng-if="filemanager.filesUpload.length > 0"
+                    class="md-raised"
+                    aria-label="upload"
+                    ng-click="filemanager.upload($event)"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <md-icon md-svg-icon="upload"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        Subir
+                    </span>
+                </md-button>
+                <md-button
+                    class="md-warn md-raised"
+                    aria-label="cerrar"
+                    ng-click="filemanager.cancel($event)"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <md-icon md-svg-icon="close"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        Cerrar
+                    </span>
+                </md-button>
+                <md-button
+                    class="md-primary md-raised"
+                    aria-label="ok"
+                    ng-click="filemanager.ok($event)"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <md-icon md-svg-icon="check"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        Ok
+                    </span>
+                </md-button>
+            </div>
+        </div>
+    </md-dialog-actions>
+</md-dialog>

@@ -1,0 +1,108 @@
+
+
+md-dialog{
+    md-dialog-content{
+        .pempo-datetime-picker-actual-month{
+            font-size: 1.5em;
+        }
+        .pempo-datetime-picker-actual-num{
+            font-size: 3em;
+        }
+        .pempo-datetime-picker-actual-year{
+            font-size: 1.7em;
+        }
+        pempo-datetime-calendar{
+            > md-virtual-repeat-container{
+                position: inherit !important;
+                min-height: 200px;
+                min-width: 250px;
+                .pempo-select-day{
+                    &.md-button{
+                        &.md-icon-button{
+                            height: auto;
+                            width: auto;
+                            background: transparent;
+                            margin: 0;
+                            padding: 8px;
+                        }
+                    }
+                }
+            }
+        }
+        .pempo-datetime-picker-datetime{
+            .pempo-datetime-picker-actual-meridien{
+                padding: 5px 10px;
+                .pempo-datetime-picker-time{
+                    font-size: 2em;
+                }
+                .pempo-datetime-picker-actual-time{
+                    font-size: 2em;
+                }
+            }
+            pempo-datetime-clock{
+                .pempo-datetime-picker-clock{
+                    margin: 10px 20px 0px 20px;
+                    padding: 10px;
+                    border-radius: 50% !important;
+                    /*background: #eee;*/
+                    > .pempo-datetime-picker-time-points{
+                        position:absolute;
+                        margin-top: -5px;
+                        margin-left: -7px;
+                        .pempo-datetime-picker-time{
+                            position: absolute;
+                            width: 30px;
+                            height: 30px;
+                            font-size: 1.1em;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            text-align: center !important;
+                        }
+                    }
+                    .pempo-datetime-picker-clock-center{
+                        width: 15px;
+                        height: 15px;
+                        border-radius: 50%;
+                        position: absolute;
+                        z-index: 50;
+                        margin-left: 10px;
+                        top: 28px;
+                    }
+                    .pempo-datetime-picker-hand{
+                        position: absolute;
+                        width: 6px;
+                        margin-left: -2px;
+                        -moz-transform: rotate(0deg);
+                        -ms-transform: rotate(0deg);
+                        -webkit-transform: rotate(0deg);
+                        transform: rotate(0deg);
+                        -moz-transform-origin: bottom;
+                        -ms-transform-origin: bottom;
+                        -webkit-transform-origin: bottom;
+                        transform-origin: bottom;
+                        z-index: 1;
+                        &.pempo-datetime-picker-minute-hand{
+                            width: 2px;
+                            margin-left: -1px;
+                        }
+                        &.pempo-datetime-picker-minute-hand,
+                        &.pempo-datetime-picker-hour-hand{
+                            &.on{
+                                background: #111;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    md-dialog-actions{
+        &.pempo-datetime-picker-buttons{
+            margin: 0;
+            padding: 0;
+            .md-button{
+                margin: 8px;
+            }
+        }
+    }
+}

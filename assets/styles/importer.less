@@ -28,3 +28,243 @@
 // @import 'pages/signup.less';
 //
 // etc.
+@import 'slide.less';
+@import 'scrollbar.less';
+@import 'pempodatetimepicker.less';
+
+.md-solucionescucutablank-theme{
+    /*color: rgb(66, 66, 66);
+    background: #fff;*/
+    .md-datepicker-input-container{
+        > button{
+            &.md-triangle-button{
+                &.md-icon-button{
+                    background: transparent !important;
+                }
+            }
+        }
+    }
+}
+.button-group {
+    .md-button{
+        margin: 20px 0;
+        //padding: 3px 15px 3px 15px;
+        &:first-child {
+            border-radius: 10px 0 0 10px;
+        }
+        &:last-child {
+            border-radius: 0 10px 10px 0;
+        }
+        &:not(:first-child){
+            &:not(:last-child){
+                border-radius: 0;
+            }
+        }
+    }
+}
+
+.search {
+    padding: 8px;
+    font-size: 18px;
+    text-transform: uppercase;
+     md-input-container {
+        /*margin-bottom: -20px;
+        margin-top: 0;
+        &.md-input-focused,
+        &.md-input-has-value{
+            margin-top: 18px;
+        }*/
+        > input {
+            color: #ffffff;
+        }
+        > .md-error-spacer {
+            display: none;
+        }
+        &.md-solucionescucutablank-theme,
+        &.md-solucionescucuta-theme {
+            color: rgb(244,67,54);
+            .md-input {
+                border-color: rgb(244,67,54);
+            }
+            label,
+            .md-input {
+                color: rgb(244,67,54);
+                text-shadow: none;
+            }
+        }
+    }
+}
+
+.md-overflow-hidden{
+    overflow: hidden;
+}
+.md-overflow-x{
+    overflow-x: auto;
+}
+.md-overflow-y{
+    overflow-y: auto;
+}
+
+.md-toolbar-tools{
+    .logo{
+        height: 52px;
+    }
+    .search{
+        font-size: 12px;
+    }
+}
+
+.md-width-25{
+    width: 25%;
+}
+.md-width-50{
+    width: 50%;
+}
+.md-width-75{
+    width: 75%;
+}
+
+.md-width-100{
+    width: 100%;
+}
+
+.layout-padding-only{
+    padding: 8px;
+}
+
+img{
+    width: auto;
+    height: auto;
+    &.fixed-width{
+        width: 100%;
+    }
+    &.fixed-height{
+        height: 100%;
+    }
+    /*width: 100%;
+    height: 100%;*/
+}
+
+md-table-pagination{
+    &.md-table-pagination{
+        padding-top: 10px;
+        > * {
+            height: auto;
+            padding: 10px 0;
+        }
+    }
+}
+
+md-input-container{
+    &.md-solucionescucuta-theme {
+        .md-input{
+            color: #000;
+            text-shadow: none;
+        }
+    }
+}
+
+.md-select-header-container {
+    .md-header-searchbox{
+        border: none;
+        outline: none;
+        height: 100%;
+        width: 100%;
+        padding: 0;
+    }
+    .md-select-header{
+        box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.1), 0 0 0 0 rgba(0, 0, 0, 0.14), 0 0 0 0 rgba(0, 0, 0, 0.12);
+        padding-left: 10.667px;
+        height: 48px;
+        cursor: pointer;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: auto;
+    }
+    md-content{
+        ._md{
+            max-height: 240px;
+        }
+    }
+}
+
+.md-cell{
+    &.md-selected{
+        background-color: #E4E4E4;
+    }
+}
+
+.md-text-button-left{
+    text-align: left;
+    > .md-button{
+        text-align: left;
+    }
+}
+
+.md-dialog-container{
+    z-index: 65536;
+}
+.md-open-menu-container{
+    z-index: 65537;
+}
+form{
+    &.search-file{
+        > div{
+            > md-input-container{
+                margin: 0;
+            }
+        }
+    }
+}
+
+md-dialog-content{
+    &.md-drag-over{
+        border-style: dashed;
+    }
+    md-grid-list{
+        md-grid-tile{
+            > figure{
+                > .md-button{
+                    padding: 0;
+                    .preview-file{
+                        -webkit-transform: -webkit-translate(-48px);
+                        -moz-transform: -moz-translate(-48px);
+                        -ms-transform: -ms-translate(-48px);
+                        -o-transform: -o-translate(-48px);
+                        transform: translateY(-48px);
+                        -webkit-transition: -webkit-transform 250ms ease;
+                        -moz-transition: -moz-transform 250ms ease;
+                        -ms-transition: -ms-transform 250ms ease;
+                        -o-transition: -o-transform 250ms ease;
+                        transition: transform 250ms ease;
+                        > *{
+                            background-size: contain;
+                            background-position: center;
+                            background-repeat: no-repeat;
+                        }
+                    }
+
+                    &.md-hue-1,
+                    &:hover
+                    {
+                        .preview-file{
+                            -webkit-transform: -webkit-translate(-0px);
+                            -moz-transform: -moz-translate(-0px);
+                            -ms-transform: -ms-translate(-0px);
+                            -o-transform: -o-translate(-0px);
+                            transform: translateY(-0px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+md-progress-linear{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 999999999999;
+}

@@ -28,12 +28,12 @@ process.chdir(__dirname);
   try {
     sails = require('sails');
   } catch (e) {
-    console.error('To run an app using `node app.js`, you usually need to have a version of `sails` installed in the same directory as your app.');
+    console.error('To run an blog using `node blog.js`, you usually need to have a version of `sails` installed in the same directory as your blog.');
     console.error('To do that, run `npm install sails`');
     console.error('');
     console.error('Alternatively, if you have sails installed globally (i.e. you did `npm install -g sails`), you can use `sails lift`.');
-    console.error('When you run `sails lift`, your app will still use a local `./node_modules/sails` dependency if it exists,');
-    console.error('but if it doesn\'t, the app will run with the global sails instead!');
+    console.error('When you run `sails lift`, your blog will still use a local `./node_modules/sails` dependency if it exists,');
+    console.error('but if it doesn\'t, the blog will run with the global sails instead!');
     return;
   }
 

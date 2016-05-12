@@ -1,0 +1,43 @@
+<md-toast md-theme="{{ ::toast.theme }}">
+    <div class="md-toast-content" layout="column">
+        <md-button
+            ng-if="!!toast.highlight"
+            class="md-toast-content md-raised {{ ::toast.highlight }}"
+            ng-class="{'layout-fill': !$mdMedia('gt-sm')}"
+            aria-label="{{::toast.text}}"
+            ng-click="toast.close($event)"
+        >
+            <span class="md-toast-text" flex>
+                {{::toast.text}}
+            </span>
+            <md-button
+                ng-if="toast.link"
+                class="md-highlight"
+                aria-label="{{ ::toast.link.text }}"
+                ng-click="toast.link.onClick($event)"
+            >
+                {{ ::toast.link.text }}
+            </md-button>
+        </md-button>
+        <div ng-if="!toast.highlight" layout="row" layout-align="center center">
+            <span class="md-toast-text" flex>
+                {{::toast.text}}
+            </span>
+            <md-button
+                ng-if="toast.link"
+                class="md-highlight"
+                aria-label="{{::toast.link.text}}"
+                ng-click="toast.onClick($event)"
+            >
+                {{ ::toast.link.text }}
+            </md-button>
+            <md-button
+                class="md-raised md-warn md-hue-1"
+                aria-label="cerrar"
+                ng-click="toast.close($event);"
+            >
+                Cerrar
+            </md-button>
+        </div>
+    </div>
+</md-toast>

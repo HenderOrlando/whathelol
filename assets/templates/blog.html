@@ -1,0 +1,239 @@
+<div layout-fill layout="column">
+    <md-toolbar
+        class="md-primary md-hue-3 md-whiteframe-3dp md-overflow-hidden md-overflow-x">
+        <div class="md-toolbar-tools">
+            <div layout="row" layout-margin>
+                <div layout="row" layout-align="center center" flex-sm>
+                    <img
+                        src="images/soluciones-cucuta.png"
+                        alt="Soluciones Cúcuta"
+                        title="Soluciones Cúcuta"
+                        class="logo"
+                    />
+                </div>
+            </div>
+            <div flex layout="row" layout-align="center center">
+                <!--<md-button
+                    ui-sref="blog"
+                    class="md-accent md-raised"
+                    aria-label="Blog"
+                >
+                    Que buscar en el Blog?
+                </md-button>-->
+                <form
+                    flex
+                    ng-show="mdMedia('gt-sm')"
+                    class="search"
+                    layout="column"
+                    ng-if="blog.search"
+                >
+                    <div layout="row" layout-align="center center" flex>
+                        <md-input-container
+                            flex
+                            layout="row"
+                            layout-align="center center"
+                            class="md-accent md-hue-3"
+                        >
+                            <label>{{ ::blog.search.label }}</label>
+                            <input ng-model="blog.search.query">
+                        </md-input-container>
+                        <md-button
+                            ng-hide="true"
+                            type="submit"
+                            class="md-raised md-primary md-hue-2"
+                            aria-label="{{ ::blog.search.button.label }}"
+                        >
+                            <span>
+                                {{ ::blog.search.button.label }}
+                            </span>
+                        </md-button>
+                    </div>
+                </form>
+            </div>
+            <div layout="row">
+                <md-button
+                    href="http://76.74.242.160:2095/"
+                    class="md-accent md-hue-3"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    aria-label="Email"
+                >
+                    <span ng-show="mdMedia('gt-sm')">
+                        Accede al Email
+                    </span>
+                    <md-icon md-svg-icon="email"></md-icon>
+                </md-button>
+                <md-button
+                    ui-sref="admin"
+                    class="md-accent md-hue-3"
+                    aria-label="Cuenta"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                >
+                    <span ng-show="mdMedia('gt-sm')">
+                        {{ isAuthenticated?'cuenta':'entrar' }}
+                    </span>
+                    <md-icon md-svg-icon="account"></md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-content
+        flex
+        layout="column"
+        ng-class="{'md-overflow-x': mdMedia('gt-md')}"
+        class="hide-scrollbar"
+        ui-view
+    >
+        <md-toolbar
+            md-scroll-shrink
+            class="md-accent md-whiteframe-3dp"
+        >
+            <div class="md-toolbar-tools md-overflow-y">
+                <div
+                    flex
+                    layout="row"
+                    ng-class="{'layout-align-center-center': mdMedia('gt-sm')}"
+                >
+                    <md-button
+                        class="md-primary md-hue-3"
+                        ng-repeat="menu in blog.menus"
+                        ui-sref="blog.menu({'menuname': menu.canonical})"
+                        ng-class="{'md-raised': menuSelected === $index }"
+                        ng-hide="blog.menuSelected > 0 && blog.menuSelected !== $index"
+                    >
+                        {{ ::menu.nombre }}
+                    </md-button>
+                    <div
+                        ng-repeat="menu in blog.menus"
+                        ng-show="$state.is('blog.menu', {'menuname': menu.canonical})"
+                    >
+                        <md-button
+                            class="md-primary md-hue-3"
+                            ng-repeat="menu in menu.submenu"
+                            ui-sref="blog.submenu({'submenuname': submenu.canonical})"
+                            ng-class="{'md-raised': menuSelected === $index }"
+                        >
+                            {{ ::menu.nombre }}
+                        </md-button>
+                    </div>
+                </div>
+            </div>
+        </md-toolbar>
+        <md-content
+            flex
+        >
+            <div
+                layout="row"
+                flex-offset-gt-sm="10"
+                flex-offset="5"
+            >
+                <div
+                    layout="column"
+                    flex-gt-sm="90"
+                    flex="95"
+                >
+                    <md-grid-list
+                        flex
+                        md-cols="2"
+                        md-cols-gt-sm="4"
+                        md-row-height-gt-md="1:1"
+                        md-row-height="4:3"
+                        md-gutter="1px"
+                        md-gutter-gt-sm="2px"
+                    >
+                        <md-grid-tile
+                            ng-repeat="pub in blog.principales"
+                            md-rowspan="{{ pub.span.row }}"
+                            md-colspan="{{ pub.span.col }}"
+                        >
+                            <img
+                                class="md-width-100"
+                                ng-if="pub.archivo"
+                                ng-src="{{ pub.archivo.src }}"
+                            />
+                            <md-grid-tile-footer>
+                                <h3>{{ pub.nombre }}</h3>
+                            </md-grid-tile-footer>
+                        </md-grid-tile>
+                    </md-grid-list>
+                </div>
+            </div>
+            <div
+                layout="row"
+                flex-offset-gt-sm="10"
+                flex-offset="5"
+            >
+                <div
+                    layout="column"
+                    flex="95"
+                    flex-gt-sm="90"
+                >
+                    <md-card
+                        md-theme="solucionescucutablank"
+                        ng-repeat="pub in blog.publicaciones"
+                        ng-init="blog.hasArchivo('principal', pub)"
+                    >
+                        <md-card-header>
+                            <md-card-avatar>
+                                <img class="md-user-avatar" ng-src="{{ ::pub.archivoPrincipal.src }}">
+                            </md-card-avatar>
+                            <md-card-header-text>
+                            <span class="md-title">
+                                {{ ::pub.usuario.username }}
+                            </span>
+                            <span class="md-subhead">
+                                {{ ::blog.getDateHumanized(pub.updatedAt) }}
+                            </span>
+                            </md-card-header-text>
+                        </md-card-header>
+                        <img
+                            ng-if="pub.archivoPrincipal"
+                            ng-src="{{ ::pub.archivoPrincipal.src }}"
+                            class="md-card-image"
+                            alt="{{ ::pub.archivoPrincipal.nombre }}"
+                        />
+                        <md-card-title>
+                            <md-card-title-text>
+                            <span class="md-headline">
+                                {{ ::pub.nombre }}
+                            </span>
+                            <span class="md-subhead">
+                                {{ ::blog.getEtiquetas(pub) }}
+                            </span>
+                            </md-card-title-text>
+                        </md-card-title>
+                        <md-card-content>
+                            <p ng-bind-html="::pub.contenido"></p>
+                        </md-card-content>
+                        <md-divider></md-divider>
+                        <md-card-actions layout="column">
+                            <div
+                                ng-if="mdMedia('gt-sm')"
+                                layout="row"
+                                layout-align="start center"
+                            >
+                                <md-button>Action 1</md-button>
+                                <md-button>Action 2</md-button>
+                            </div>
+                            <md-card-icon-actions
+                                ng-if="!mdMedia('gt-sm')"
+                                layout="row"
+                                layout-align="center center"
+                            >
+                                <div flex layout="column">
+                                    <md-button aria-label="account">
+                                        <md-icon md-svg-icon="account"></md-icon>
+                                    </md-button>
+                                </div>
+                                <div flex layout="column">
+                                    <md-button aria-label="add">
+                                        <md-icon md-svg-icon="plus"></md-icon>
+                                    </md-button>
+                                </div>
+                            </md-card-icon-actions>
+                        </md-card-actions>
+                    </md-card>
+                </div>
+            </div>
+        </md-content>
+    </md-content>
+</div>

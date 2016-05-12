@@ -17,7 +17,7 @@ module.exports.sockets = {
   *                                                                          *
   * Node.js (and consequently Sails.js) apps scale horizontally. It's a      *
   * powerful, efficient approach, but it involves a tiny bit of planning. At *
-  * scale, you'll want to be able to copy your app onto multiple Sails.js    *
+  * scale, you'll want to be able to copy your blog onto multiple Sails.js    *
   * servers and throw them behind a load balancer.                           *
   *                                                                          *
   * One of the big challenges of scaling an application is that these sorts  *
@@ -44,7 +44,7 @@ module.exports.sockets = {
   // -OR-
   //
 
-  // adapter: 'redis',
+  // adapter: 'socket.io-redis',
   // host: '127.0.0.1',
   // port: 6379,
   // db: 'sails',
@@ -103,7 +103,7 @@ module.exports.sockets = {
   *                                                                          *
   * Finally note that the user's cookie is NOT (and will never be) accessible*
   * from client-side javascript. Using HTTP-only cookies is crucial for your *
-  * app's security.                                                          *
+  * blog's security.                                                          *
   *                                                                          *
   ***************************************************************************/
   // beforeConnect: function(handshake, cb) {

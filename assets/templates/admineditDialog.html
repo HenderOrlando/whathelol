@@ -1,0 +1,234 @@
+<md-dialog md-theme="{{ theme }}">
+    <md-toolbar
+        class=" md-table-toolbar alternate md-primary md-hue-2"
+    >
+        <div class="md-toolbar-tools">
+            <div layout="row" flex>
+                <h2 ng-if="admineditdialog.title">
+                    {{ ::admineditdialog.title }}
+                </h2>
+                <!--<md-button
+                    ui-sref="admin.resource"
+                    aria-label="volver a {{ ::admineditdialog.menu.plural }}"
+                >
+                    <md-icon md-svg-icon="chevron-left"></md-icon>
+                    <span>
+                        volver a {{ ::admineditdialog.menu.plural }}
+                    </span>
+                </md-button>-->
+                <span
+                    flex
+                    layout="column"
+                    layout-align="center center"
+                >
+                    {{ admineditdialog.obj.nombre }}
+                </span>
+                <md-button
+                    ng-click="admineditdialog.saveResource()"
+                    aria-label="guardar"
+                    ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                    ng-hide="{{ admineditdialog.obj.$updated }}"
+                >
+                    <md-icon md-svg-icon="content-save"></md-icon>
+                    <span ng-if="mdMedia('gt-sm')">
+                        guardar
+                    </span>
+                </md-button>
+                <md-button class="md-icon-button" ng-click="admineditdialog.close()" aria-label="Cerrar">
+                    <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+                </md-button>
+            </div>
+        </div>
+    </md-toolbar>
+    <md-dialog-content flex layout="column" layout-padding md-theme="solucionescucutablank">
+        <form ng-submit="admineditdialog.saveResource()" layout-column>
+            <div
+                ng-repeat="(key, val) in admineditdialog.attrs"
+            >
+                <md-input-container
+                    ng-if="val.type === 'text'"
+                    layout="row"
+                    flex
+                    md-no-float
+                >
+                    <label>
+                        {{ ::(admineditdialog.labels[key] || key) }}
+                    </label>
+                <textarea
+                    placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                    class="md-textarea-tinymce"
+                    ng-required="val.required"
+                    ng-model="admineditdialog.obj[key]"
+                    ui-tinymce="admineditdialog.tinymceoption"
+                ></textarea>
+                </md-input-container>
+                <md-input-container
+                    ng-if="adminresource.isDate(admineditdialog.obj[key], key)"
+                    layout="row"
+                    flex
+                >
+                    <label>
+                        {{ ::(admineditdialog.labels[key] || key) }}
+                    </label>
+                    <input
+                        pempo-datetime-picker
+                        date="val.type === 'date' || val.type === 'datetime'"
+                        time="val.type === 'time' || val.type === 'datetime'"
+                        format="LLLL"
+                        type="val.type"
+                        short-time="true"
+                        placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                        ng-model="admineditdialog.obj[key]"
+                    />
+                </md-input-container>
+                <div ng-if="val.type !== 'text' && !adminresource.isDate(admineditdialog.obj[key], val)">
+                    <md-input-container
+                        ng-if="adminresource.isString(admineditdialog.obj[key], key) || adminresource.isNumeric(admineditdialog.obj[key], key) || val.type === 'boolean'"
+                        layout="row"
+                        flex
+                    >
+                        <!--ng-if="key !== 'icono' && key !== 'icon' && val.type && !val.opts"-->
+                        <label ng-if="val.type !== 'boolean'">
+                            {{ ::(admineditdialog.labels[key] || key) }}
+                        </label>
+                        <input
+                            ng-if="val.type !== 'boolean'"
+                            placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                            ng-required="val.required"
+                            ng-model="admineditdialog.obj[key]"
+                            type="{{ ::val.type }}"
+                        >
+                        <md-checkbox
+                            ng-if="val.type === 'boolean'"
+                            aria-label="{{ ::admineditdialog.labels[key] }}"
+                            ng-model="admineditdialog.obj[key]"
+                        >
+                            {{ ::admineditdialog.labels[key] || key}}
+                        </md-checkbox>
+                    </md-input-container>
+                    <!--<div ng-if="!!val.opts" layout="row" flex>-->
+                    <div
+                        ng-if="adminresource.isRelation(admineditdialog.obj[key], key) || adminresource.isCollection(admineditdialog.obj[key], key)"
+                        layout="row"
+                        flex
+                    >
+                        <md-icon
+                            ng-if="key === 'icono'"
+                            md-svg-icon="{{ admineditdialog.obj[key] }}"
+                        ></md-icon>
+                        <md-autocomplete
+                            ng-if="adminresource.isRelation(admineditdialog.obj[key], key)"
+                            flex
+                            delete-button-label="Borrar"
+                            delete-hint="Borrar {{ ::key }}"
+                            md-no-cache="true"
+                            md-min-length="0"
+                            md-selected-item="admineditdialog.obj[key]"
+                            md-selected-item-change="admineditdialog.autocompleteSelectedItemChange(val, key, item)"
+                            md-search-text="admineditdialog.autocompleteSearchText[key]"
+                            md-search-text-change="admineditdialog.autocompleteSearchTextChange(val, key, item)"
+                            md-search-item-change="admineditdialog.autocompleteSearchItemChange(val, key, item)"
+                            md-items="item in admineditdialog.getOpts(admineditdialog.obj[key], key)"
+                            md-item-text="item.nombre || item.username || item"
+                            placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                            md-floating-label="{{ ::(admineditdialog.labels[key] || key) }}"
+                        >
+                            <md-item-template>
+                                <md-icon
+                                    ng-if="key === 'icono'"
+                                    md-svg-icon="{{ item.icono || item.nombre || item }}"
+                                ></md-icon>
+                            <span
+                                md-highlight-text="admineditdialog.autocompleteSearchText[key]"
+                                md-highlight-flags="^i"
+                            >
+                                {{ item.nombre || item.username || item }}
+                            </span>
+                                <span flex></span>
+                                <md-icon
+                                    ng-if="admineditdialog.autocompleteCheck(item, key, admineditdialog.obj)"
+                                    md-svg-icon="check"
+                                ></md-icon>
+                            </md-item-template>
+                            <!--<md-not-found>
+                                {{ ::(admineditdialog.labels[key] || key) }} "{{ admineditdialog.autocompleteSearchText[key] }}" were not found.
+                                <a ng-click="admineditdialog.formNewElemento(val, admineditdialog.obj[key])">
+                                    Create a new one!
+                                </a>
+                            </md-not-found>-->
+                        </md-autocomplete>
+                        <md-chips
+                            ng-if="adminresource.isCollection(admineditdialog.obj[key], key)"
+                            flex
+                            ng-click="admineditdialog.getInfoSelectChip(val, key, admineditdialog.obj, $event)"
+                            ng-model="admineditdialog.obj[key]"
+                            md-transform-chip="admineditdialog.autocompleteTransformChip(val, key, $chip)"
+                            md-on-add="admineditdialog.autocompleteOnAddChip(val, key, $chip, admineditdialog.obj)"
+                            md-on-remove="admineditdialog.autocompleteOnRemoveChip(val, key, $chip, admineditdialog.obj)"
+                            placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                            secondary-placeholder="+ {{ ::(admineditdialog.labels[key] || key) }}"
+                            md-require-match="admineditdialog.requireMatchChip(val, key, admineditdialog.obj)"
+                            md-autocomplete-snap
+                        >
+                            <md-autocomplete
+                                flex
+                                md-no-cache="true"
+                                delete-button-label="Borrar"
+                                delete-hint="Borrar {{ ::key }}"
+                                md-selected-item="admineditdialog.selectedObj[key]"
+                                md-selected-item-change="admineditdialog.autocompleteSelectedItemChange(val, key, item)"
+                                md-search-text="admineditdialog.autocompleteSearchText[key]"
+                                md-search-text-change="admineditdialog.autocompleteSearchTextChange(val, key, item)"
+                                md-search-item-change="admineditdialog.autocompleteSearchItemChange(val, key, item)"
+                                md-items="item in admineditdialog.getOpts(admineditdialog.obj[key], key)"
+                                md-item-text="item.nombre || item.username || item"
+                                md-min-length="0"
+                                placeholder="{{ ::(admineditdialog.labels[key] || key) }}"
+                            >
+                                <md-item-template layout="column">
+                                    <div>
+                                        <md-icon
+                                            ng-if="item.icono"
+                                            md-svg-icon="{{ item.icono }}"
+                                        ></md-icon>
+                                    <span
+                                        md-highlight-text="admineditdialog.autocompleteSearchText[key]"
+                                        md-highlight-flags="^i"
+                                    >
+                                        {{ item.nombre || item.username || item }}
+                                    </span>
+                                        <span flex></span>
+                                        <md-icon
+                                            ng-if="admineditdialog.autocompleteCheck(item, key, admineditdialog.obj)"
+                                            md-svg-icon="check"
+                                        ></md-icon>
+                                    </div>
+                                </md-item-template>
+                            </md-autocomplete>
+                            <md-chip-template>
+                                <md-icon
+                                    ng-if="$chip.icono"
+                                    md-svg-icon="{{ $chip.icono }}"
+                                ></md-icon>
+                            <span>
+                                {{ $chip.nombre || $chip.username }}
+                            </span>
+                                <span flex></span>
+                                <md-icon
+                                    ng-if="!$chip.id"
+                                    md-svg-icon="new-box"
+                                ></md-icon>
+                            </md-chip-template>
+                        </md-chips>
+                    </div>
+                </div>
+            </div>
+            <md-button
+                type="submit"
+                ng-hide="true"
+            >
+                Guardar
+            </md-button>
+        </form>
+    </md-dialog-content>
+</md-dialog>

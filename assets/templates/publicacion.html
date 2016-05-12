@@ -1,0 +1,74 @@
+
+<article
+    ng-repeat="publicacion in publicaciones"
+    layout="row"
+    layout-align="center center"
+    id="{{ ::publicacion.id }}p"
+>
+    <md-card md-theme="solucionescucutablank">
+        <md-card-title ng-if="mdMedia('gt-sm')">
+            <md-card-title-text>
+                    <span class="md-headline">
+                        {{ ::publicacion.nombre }}
+                    </span>
+                    <span class="md-subhead">
+                        {{ ::publicacion.usuario.nombre }}
+                    </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content
+            layout-gt-xs="row"
+            ng-class="{'layout-xs-column': mdMedia('xs') || publicacion.xs}"
+        >
+            <div
+                ng-if="publicacion.archivos.length"
+                flex="35"
+                flex-xs="100"
+                layout="row"
+                layout-align="center center"
+            >
+                <div>
+                    <img
+                        class="fixed-width"
+                        ng-src="{{ ::archivo.src }}"
+                        ng-repeat="archivo in publicacion.archivos"
+                    />
+                </div>
+                <!--<pempo-slide
+                    adjust-to="#{{ ::publicacion.id }}p"
+                    images="publicacion.archivos"
+                    slide-in="right"
+                    with-fade="true"
+                    autoslide="5000"
+                />-->
+            </div>
+            <md-card-title ng-if="!mdMedia('gt-sm')">
+                <md-card-title-text>
+                    <span class="md-headline">
+                        {{ ::publicacion.nombre }}
+                    </span>
+                    <span class="md-subhead">
+                        {{ ::publicacion.usuario.nombre }}
+                    </span>
+                </md-card-title-text>
+            </md-card-title>
+            <div flex>
+                <p>
+                    {{ ::publicacion.contenido }}
+                </p>
+            </div>
+        </md-card-content>
+        <!--<md-card-actions layout="row" layout-align="end center">
+            <md-button
+                class="md-raised"
+            >
+                Action 1
+            </md-button>
+            <md-button
+                class="md-raised"
+            >
+                Action 2
+            </md-button>
+        </md-card-actions>-->
+    </md-card>
+</article>

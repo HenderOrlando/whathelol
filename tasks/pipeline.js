@@ -5,18 +5,23 @@
  * compiled and linked from your views and static HTML files.
  *
  * (Note that you can take advantage of Grunt-style wildcard/glob/splat expressions
- * for matching multiple files, and the ! prefix for excluding files.)
+ * for matching multiple files.)
+ *
+ * For more information see:
+ *   https://github.com/balderdashy/sails-docs/blob/master/anatomy/myApp/tasks/pipeline.js.md
  */
 
-// Path to public folder
-var tmpPath = '.tmp/public/';
 
 // CSS files to inject in order
 //
 // (if you're using LESS with the built-in default config, you'll want
 //  to change `assets/styles/importer.less` instead.)
 var cssFilesToInject = [
-  'styles/**/*.css'
+    'styles/dependencies/angular.csp.css',
+    'styles/dependencies/dist/sweetalert.css',
+    'styles/dependencies/lib/codemirror.css',
+    'styles/dependencies/angular-material.css',
+    'styles/**/*.css'
 ];
 
 
@@ -24,18 +29,45 @@ var cssFilesToInject = [
 // (uses Grunt-style wildcard/glob/splat expressions)
 var jsFilesToInject = [
 
-  // Load sails.io before everything else
-  'js/dependencies/sails.io.js',
+    // Load sails.io before everything else
+    'js/dependencies/sails.io.js',
+    'js/dependencies/lodash.js',
+    'js/dependencies/dist/jquery.js',
+    'js/dependencies/dist/sweetalert.min.js',
+    'js/dependencies/min/moment-with-locales.js',
+    'js/dependencies/tinymce.min.js',
+    'js/dependencies/jquery.tinymce.min.js',
+    'js/dependencies/lib/codemirror.js',
+    'js/dependencies/dist/api-check.js',
+    'js/dependencies/angular.js',
+    'js/dependencies/angular-resource.js',
+    'js/dependencies/dist/formly.js',
+    'js/dependencies/SweetAlert.js',
+    'js/dependencies/angular-aria.js',
+    'js/dependencies/angular-cookies.js',
+    'js/dependencies/angular-moment.js',
+    'js/dependencies/src/tinymce.js',
+    'js/dependencies/angular-animate.js',
+    'js/dependencies/angular-messages.js',
+    'js/dependencies/angular-sanitize.js',
+    'js/dependencies/ui-codemirror.js',
+    'js/dependencies/dist/uploader.js',
+    'js/dependencies/release/angular-ui-router.js',
+    'js/dependencies/angular-material.js',
+    'js/dependencies/src/sailsResource.js',
+    'js/dependencies/angular-mocks.js',
+    'js/dependencies/angular-translate.js',
+    'js/dependencies/angular-translate-loader-partial.js',
+    'js/dependencies/dist/formly-material.js',
+    //'/bower_components/angular-material/angular-material-mocks.js',
 
-  // Dependencies like jQuery, or Angular are brought in here
-  'js/dependencies/**/*.js',
+    // Dependencies like jQuery, or Angular are brought in here
+    'js/blog.js',
+    'js/dependencies/**/*.js',
 
-  // All of the rest of your client-side js files
-  // will be injected here in no particular order.
-  'js/**/*.js',
-
-  // Use the "exclude" operator to ignore files
-  // '!js/ignore/these/files/*.js'
+    // All of the rest of your client-side js files
+    // will be injected here in no particular order.
+    'js/**/*.js'
 ];
 
 
@@ -49,20 +81,29 @@ var jsFilesToInject = [
 // templates get spit out to the same file.  Be sure and check out `tasks/README.md`
 // for information on customizing and installing new tasks.
 var templateFilesToInject = [
-  'templates/**/*.html'
+    'templates/**/*.html'
 ];
 
 
 
+
+
+
+
+// Default path for public folder (see documentation for more information)
+var tmpPath = '.tmp/public/';
+
 // Prefix relative paths to source files so they point to the proper locations
 // (i.e. where the other Grunt tasks spit them out, or in some cases, where
 // they reside in the first place)
-module.exports.cssFilesToInject = cssFilesToInject.map(transformPath);
-module.exports.jsFilesToInject = jsFilesToInject.map(transformPath);
-module.exports.templateFilesToInject = templateFilesToInject.map(transformPath);
+module.exports.cssFilesToInject = cssFilesToInject.map(function(cssPath) {
+    return require('path').join(tmpPath, cssPath);
+});
+module.exports.jsFilesToInject = jsFilesToInject.map(function(jsPath) {
+    return require('path').join(tmpPath, jsPath);
+});
+module.exports.templateFilesToInject = templateFilesToInject.map(function(tplPath) {
+    return require('path').join('assets/',tplPath);
+});
 
-// Transform paths relative to the "assets" folder to be relative to the public
-// folder, preserving "exclude" operators.
-function transformPath(path) {
-  return (path.substring(0,1) == '!') ? ('!' + tmpPath + path.substring(1)) : (tmpPath + path);
-}
+

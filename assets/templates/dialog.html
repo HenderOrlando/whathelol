@@ -1,0 +1,51 @@
+<md-dialog md-theme="{{ theme }}">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 ng-if="dialog.title">
+                {{ ::dialog.title }}
+            </h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="dialog.close()" aria-label="Cerrar">
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <div>
+            <span class="md-toast-text" flex>
+                {{::dialog.text}}
+            </span>
+            <md-button
+                ng-if="toast.link"
+                ng-click="toast.link.onClick($event)">
+                {{ ::dialog.link.text }}
+            </md-button>
+            <md-button class="md-raised" ng-click="toast.close($event);">
+                Cerrar
+            </md-button>
+        </div>
+    </md-dialog-content>
+    <md-dialog-actions layout="row" ng-if="dialog.actions">
+        <md-button
+            ng-if="action.onClick"
+            ng-repeat="action in dialog.actions"
+            ng-click="action.onClick($event)"
+        >
+            {{ ::action.text }}
+        </md-button>
+        <md-button
+            ng-if="action.sref && action.params"
+            ng-repeat="action in dialog.actions"
+            ui-sref="{{ ::action.sref }}({{ ::action.params }})"
+        >
+            {{ ::action.text }}
+        </md-button>
+        <md-button
+            ng-if="action.sref && !action.params"
+            ng-repeat="action in dialog.actions"
+            ui-sref="{{ ::action.sref }}()"
+        >
+            {{ ::action.text }}
+        </md-button>
+    </md-dialog-actions>
+</md-dialog>

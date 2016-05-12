@@ -1,0 +1,12 @@
+
+<md-virtual-repeat-container md-top-index="cal.topIndex" class="months">
+    <div
+        md-virtual-repeat="idx in cal.months"
+        md-start-index="cal.topIndex"
+        md-item-size="200"
+        md-auto-shrink
+    >
+        <!--md-item-size="cal.size"-->
+        <pempo-datetime-calendar-month idx="idx"></pempo-datetime-calendar-month>
+    </div>
+</md-virtual-repeat-container>

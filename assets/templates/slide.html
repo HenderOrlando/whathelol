@@ -1,0 +1,43 @@
+
+<div
+    flex
+    class="slider"
+    style="height: {{ getMinHeight() }}; width: auto"
+>
+    <div
+        class="slide {{ ::(!isCurrent($index)?'ng-hide':'')}}"
+        layout-fill
+        ng-class="image.slideEffect + ' ' + slideSize + ' ' + (withFade?'fade':'')"
+        ng-repeat="image in images"
+        ng-show="isCurrent($index)"
+        style="background-image: url('{{ ::image.src }}')"
+    ></div>
+    <div flex></div>
+    <div
+        ng-show="images.length > 1"
+        class="arrows"
+        layout-fill
+        layout="row"
+        layout-align="center center"
+    >
+        <div layout="column">
+            <md-button
+                aria-label="Preview"
+                ng-click="prev($event)"
+                class="md-icon-button"
+            >
+                <md-icon md-svg-icon="chevron-left"></md-icon>
+            </md-button>
+        </div>
+        <span flex></span>
+        <div layout="column">
+            <md-button
+                aria-label="Next"
+                ng-click="next($event)"
+                class="md-icon-button"
+            >
+                <md-icon md-svg-icon="chevron-right"></md-icon>
+            </md-button>
+        </div>
+    </div>
+</div>

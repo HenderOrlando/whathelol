@@ -1,0 +1,398 @@
+<md-toolbar
+    class=" md-table-toolbar alternate md-primary md-hue-2"
+>
+    <div class="md-toolbar-tools">
+        <div layout="row" flex>
+            <md-button
+                ng-if="!mdMedia('gt-md')"
+                class="md-raised"
+                ng-click="admin.toggleSidenav('left')"
+                aria-label="{{ ::admin.isOpenSidenav('left')?'cerrar':'abrir' }}"
+                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+            >
+                <md-icon md-svg-icon="{{ adminedit.menu.icon }}"></md-icon>
+                <span ng-if="mdMedia('gt-sm')">
+                    {{ ::(adminedit.menu.nombre) }}
+                </span>
+            </md-button>
+            <!--<md-button
+                ui-sref="admin.resource"
+                aria-label="volver a {{ ::adminedit.menu.plural }}"
+            >
+                <md-icon md-svg-icon="chevron-left"></md-icon>
+                <span>
+                    volver a {{ ::adminedit.menu.plural }}
+                </span>
+            </md-button>-->
+            <span
+                flex
+                layout="column"
+                layout-align="center center"
+            >
+                {{ adminedit.obj.nombre }}
+            </span>
+            <md-button
+                ng-if="adminedit.obj.id"
+                ng-click="adminedit.deleteResource()"
+                aria-label="borrar"
+                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+            >
+                <md-icon md-svg-icon="delete"></md-icon>
+                <span ng-if="mdMedia('gt-sm')">
+                    borrar
+                </span>
+            </md-button>
+            <md-button
+                ng-click="adminedit.saveResource()"
+                aria-label="guardar"
+                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                ng-hide="{{ adminedit.obj.$updated }}"
+            >
+                <md-icon md-svg-icon="content-save"></md-icon>
+                <span ng-if="mdMedia('gt-sm')">
+                    guardar
+                </span>
+            </md-button>
+            <!--<md-button
+                aria-label="opciones"
+                ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+            >
+                <md-icon md-svg-icon="dots-vertical"></md-icon>
+                        <span ng-if="mdMedia('gt-sm')">
+                            opciones
+                        </span>
+            </md-button>-->
+        </div>
+    </div>
+</md-toolbar>
+<md-content flex layout="column" layout-padding md-theme="solucionescucutablank">
+    <form ng-submit="adminedit.saveResource()" layout-column>
+        <div
+            ng-repeat="(key, val) in adminedit.attrs"
+        >
+            <md-input-container
+                ng-if="val.type === 'text'"
+                layout="row"
+                flex
+                md-no-float
+            >
+                <label>
+                    {{ ::(adminedit.labels[key] || key) }}
+                </label>
+                <textarea
+                    placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                    class="md-textarea-tinymce"
+                    ng-required="val.required"
+                    ng-model="adminedit.obj[key]"
+                    ui-tinymce="adminedit.tinymceoption"
+                ></textarea>
+            </md-input-container>
+            <md-input-container
+                ng-if="adminresource.isDate(adminedit.obj[key], key)"
+                layout="row"
+                flex
+            >
+                <label>
+                    {{ ::(adminedit.labels[key] || key) }}
+                </label>
+                <input
+                    pempo-datetime-picker
+                    date="val.type === 'date' || val.type === 'datetime'"
+                    time="val.type === 'time' || val.type === 'datetime'"
+                    format="LLLL"
+                    type="val.type"
+                    short-time="true"
+                    placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                    ng-model="adminedit.obj[key]"
+                />
+                <!--
+                    ng-model="adminedit.datepicker[key]"
+                -->
+            </md-input-container>
+            <div
+                ng-if="val.type !== 'text' && !adminresource.isDate(adminedit.obj[key], val)"
+                layout-gt-sm="row"
+                layout="column"
+            >
+                <md-input-container
+                    ng-if="adminresource.isString(adminedit.obj[key], key) || adminresource.isNumeric(adminedit.obj[key], key) || val.type === 'boolean'"
+                    layout="row"
+                    flex
+                >
+                    <!--ng-if="key !== 'icono' && key !== 'icon' && val.type && !val.opts"-->
+                    <label ng-if="val.type !== 'boolean'">
+                        {{ ::(adminedit.labels[key] || key) }}
+                    </label>
+                    <input
+                        ng-if="val.type !== 'boolean'"
+                        placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        ng-required="val.required"
+                        ng-model="adminedit.obj[key]"
+                        type="{{ ::val.type }}"
+                    >
+                    <md-checkbox
+                        ng-if="val.type === 'boolean'"
+                        aria-label="{{ ::adminedit.labels[key] }}"
+                        ng-model="adminedit.obj[key]"
+                    >
+                        {{ ::adminedit.labels[key] || key}}
+                    </md-checkbox>
+                </md-input-container>
+                <!--<div ng-if="!!val.opts" layout="row" flex>-->
+                <div
+                    ng-if="adminresource.isRelation(adminedit.obj[key], key) || adminresource.isCollection(adminedit.obj[key], key)"
+                    layout="row"
+                    flex
+                >
+                    <md-icon
+                        ng-if="key === 'icono'"
+                        md-svg-icon="{{ adminedit.obj[key] }}"
+                    ></md-icon>
+                    <md-autocomplete
+                        ng-if="adminresource.isRelation(adminedit.obj[key], key)"
+                        flex
+                        delete-button-label="Borrar"
+                        delete-hint="Borrar {{ ::key }}"
+                        md-no-cache="true"
+                        md-min-length="0"
+                        md-selected-item="adminedit.obj[key]"
+                        md-selected-item-change="adminedit.autocompleteSelectedItemChange(val, key, item)"
+                        md-search-text="adminedit.autocompleteSearchText[key]"
+                        md-search-text-change="adminedit.autocompleteSearchTextChange(val, key, item)"
+                        md-search-item-change="adminedit.autocompleteSearchItemChange(val, key, item)"
+                        md-items="item in adminedit.getOpts(adminedit.obj[key], key)"
+                        md-item-text="item.nombre || item.username || item"
+                        placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        md-floating-label="{{ ::(adminedit.labels[key] || key) }}"
+                    >
+                        <md-item-template>
+                            <md-icon
+                                ng-if="key === 'icono'"
+                                md-svg-icon="{{ item.icono || item.nombre || item }}"
+                            ></md-icon>
+                            <span
+                                md-highlight-text="adminedit.autocompleteSearchText[key]"
+                                md-highlight-flags="^i"
+                            >
+                                {{ item.nombre || item.username || item }}
+                            </span>
+                            <span flex></span>
+                            <md-icon
+                                ng-if="adminedit.autocompleteCheck(item, key, adminedit.obj)"
+                                md-svg-icon="check"
+                            ></md-icon>
+                        </md-item-template>
+                        <!--<md-not-found>
+                            {{ ::(adminedit.labels[key] || key) }} "{{ adminedit.autocompleteSearchText[key] }}" were not found.
+                            <a ng-click="adminedit.formNewElemento(val, adminedit.obj[key])">
+                                Create a new one!
+                            </a>
+                        </md-not-found>-->
+                    </md-autocomplete>
+                    <md-chips
+                        ng-if="adminresource.isCollection(adminedit.obj[key], key) && val.dominant"
+                        flex
+                        ng-click="adminedit.getInfoSelectChip(val, key, adminedit.obj, $event)"
+                        ng-model="adminedit.obj[key]"
+                        md-transform-chip="adminedit.autocompleteTransformChip(val, key, $chip)"
+                        md-on-add="adminedit.autocompleteOnAddChip(val, key, $chip, adminedit.obj)"
+                        md-on-remove="adminedit.autocompleteOnRemoveChip(val, key, $chip, adminedit.obj)"
+                        placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        secondary-placeholder="+ {{ ::(adminedit.labels[key] || key) }}"
+                        md-require-match="adminedit.requireMatchChip(val, key, adminedit.obj)"
+                        md-autocomplete-snap
+                    >
+                        <md-autocomplete
+                            flex
+                            md-no-cache="true"
+                            delete-button-label="Borrar"
+                            delete-hint="Borrar {{ ::key }}"
+                            md-selected-item="adminedit.selectedObj[key]"
+                            md-selected-item-change="adminedit.autocompleteSelectedItemChange(val, key, item)"
+                            md-search-text="adminedit.autocompleteSearchText[key]"
+                            md-search-text-change="adminedit.autocompleteSearchTextChange(val, key, item)"
+                            md-search-item-change="adminedit.autocompleteSearchItemChange(val, key, item)"
+                            md-items="item in adminedit.getOpts(adminedit.obj[key], key)"
+                            md-item-text="item.nombre || item.username || item"
+                            md-min-length="0"
+                            placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        >
+                            <md-item-template layout="column">
+                                <div>
+                                    <md-icon
+                                        ng-if="item.icono"
+                                        md-svg-icon="{{ item.icono }}"
+                                    ></md-icon>
+                                    <span
+                                        md-highlight-text="adminedit.autocompleteSearchText[key]"
+                                        md-highlight-flags="^i"
+                                    >
+                                        {{ item.nombre || item.username || item }}
+                                    </span>
+                                    <span flex></span>
+                                    <md-icon
+                                        ng-if="adminedit.autocompleteCheck(item, key, adminedit.obj)"
+                                        md-svg-icon="check"
+                                    ></md-icon>
+                                </div>
+                            </md-item-template>
+                        </md-autocomplete>
+                        <md-chip-template>
+                            <md-icon
+                                ng-if="$chip.icono"
+                                md-svg-icon="{{ $chip.icono }}"
+                            ></md-icon>
+                            <span>
+                                {{ $chip.nombre || $chip.username }}
+                            </span>
+                            <span flex></span>
+                            <md-icon
+                                ng-if="!$chip.id"
+                                md-svg-icon="new-box"
+                            ></md-icon>
+                        </md-chip-template>
+                    </md-chips>
+                </div>
+                <div ng-if="key === 'archivos'">
+                    <md-button
+                        aria-button="Filemanager"
+                        ng-click="adminedit.openFilemanager(val, key, adminedit.obj, $event)"
+                    >
+                        Abrir el Manejador de Archivos
+                    </md-button>
+                </div>
+                <!--<div ng-if="!!val.model" layout="row" flex>
+                    <md-autocomplete
+                        ng-if="!val.multiple"
+                        flex
+                        md-no-cache="true"
+                        md-selected-item="adminedit.obj[key]"
+                        md-selected-item-change="adminedit.autocompleteSelectedItemChange(val, key, item)"
+                        md-search-text-change="adminedit.autocompleteSearchTextChange(val, key, item)"
+                        md-search-text="adminedit.autocompleteSearchText[key]"
+                        md-search-item-change="adminedit.autocompleteSearchItemChange(val, key, item)"
+                        md-items="item in adminedit.options[key]"
+                        md-item-text="item.nombre || item.username || item"
+                        md-min-length="1"
+                        placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        md-floating-label="{{ ::(adminedit.labels[key] || key) }}"
+                    >
+                        <md-item-template>
+                    <span
+                        md-highlight-text="adminedit.autocompleteSearchText[key]"
+                        md-highlight-flags="^i"
+                    >
+                        {{ item.nombre || item.username || item }}
+                    </span>
+                        </md-item-template>
+                        &lt;!&ndash;<md-not-found>
+                            {{ ::key }} "{{ adminedit.autocompleteSearchText[key] }}" were not found.
+                            <a ng-click="forms.formNewElemento(val, forms.obj[key])">
+                                Create a new one!
+                            </a>
+                        </md-not-found>&ndash;&gt;
+                    </md-autocomplete>
+                    <md-chips
+                        ng-if="val.multiple"
+                        flex
+                        ng-model="adminedit.obj[key]"
+                        md-autocomplete-snap
+                        md-transform-chip="adminedit.autocompleteTransformChip(val, key, $chip)"
+                        md-on-add="adminedit.autocompleteOnAddChip(val, key, $chip)"
+                        md-on-remove="adminedit.autocompleteOnRemoveChip(val, key, $chip)"
+                    >
+                        <md-autocomplete
+                            flex
+                            md-no-cache="true"
+                            md-selected-item="adminedit.selectedObj[key]"
+                            md-selected-item-change="adminedit.autocompleteSelectedItemChange(val, key, item)"
+                            md-search-text-change="adminedit.autocompleteSearchTextChange(val, key, item)"
+                            md-search-text="adminedit.autocompleteSearchText[key]"
+                            md-search-item-change="adminedit.autocompleteSearchItemChange(val, key, item)"
+                            md-items="item in adminedit.options[key]"
+                            md-item-text="item.nombre || item.username || item"
+                            md-min-length="1"
+                            placeholder="{{ ::(adminedit.labels[key] || key) }}"
+                        >
+                            <md-item-template layout="row">
+                                <md-icon
+                                    ng-if="item.icono"
+                                    md-svg-icon="{{ item.icono }}"
+                                ></md-icon>
+                            <span
+                                md-highlight-text="adminedit.autocompleteSearchText[key]"
+                                md-highlight-flags="^i"
+                            >
+                                {{ item.nombre || item.username || item }}
+                            </span>
+                            </md-item-template>
+                        </md-autocomplete>
+                        <md-chip-template>
+                            <md-icon
+                                ng-if="$chip.icono"
+                                md-svg-icon="{{ $chip.icono }}"
+                            ></md-icon>
+                        <span>
+                            {{ $chip.nombre || $chip.username || $chip }}
+                        </span>
+                        </md-chip-template>
+                    </md-chips>
+                </div>-->
+                <!--<div ng-if="!val.type && !forms.isNew" flex>
+                    <div layour="row">
+                        <md-input-container flex>
+                            <label>Buscar por Nombre</label>
+                            <input
+                                ng-model="forms.search[elemento.id][key].nombre"
+                                ng-type="text"
+                            >
+                        </md-input-container>
+                        <md-input-container flex>
+                            <label>Buscar por Descripcion</label>
+                            <input
+                                ng-model="adminedit.search[elemento.id][key].descripcion"
+                                ng-type="text"
+                            >
+                        </md-input-container>
+                    </div>
+                    <div
+                        ng-if="val.multiple"
+                        layout="row"
+                        layout-wrap
+                    >
+                        <md-checkbox
+                            ng-value="opt.id"
+                            aria-label="{{ adminedit.labels[key] }}"
+                            ng-click="forms.toggleElemento(key, elemento, opt)"
+                            ng-checked="forms.isSelected(val, elemento, opt)"
+                            ng-repeat="opt in optionsElemento[val.model] | filter: adminedit.search.filter | orderBy: 'nombre' "
+                        >
+                            {{opt.nombre}}
+                        </md-checkbox>
+                    </div>
+                    <md-radio-group
+                        ng-if="!val.multiple"
+                        layout="row"
+                        ng-model="elemento[key].id"
+                        layout-wrap
+                    >
+                        <md-radio-button
+                            ng-value="opt.id"
+                            aria-label="{{ adminedit.labels[key] }}"
+                            ng-click="adminedit.toggleElemento(key, elemento, opt)"
+                            ng-repeat="opt in optionsElemento[val.model] | filter: adminedit.search.filter | orderBy: 'nombre' "
+                        >
+                            {{opt.nombre}}
+                        </md-radio-button>
+                    </md-radio-group>
+                </div>-->
+            </div>
+        </div>
+        <md-button
+            type="submit"
+            ng-hide="true"
+        >
+            Guardar
+        </md-button>
+    </form>
+</md-content>

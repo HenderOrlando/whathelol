@@ -19,33 +19,59 @@
 
 module.exports.policies = {
 
-  /***************************************************************************
-  *                                                                          *
-  * Default policy for all controllers and actions (`true` allows public     *
-  * access)                                                                  *
-  *                                                                          *
-  ***************************************************************************/
+    /***************************************************************************
+     *                                                                          *
+     * Default policy for all controllers and actions (`true` allows public     *
+     * access)                                                                  *
+     *                                                                          *
+     ***************************************************************************/
 
-  // '*': true,
+    //'*': true,
+    '*': 'OAuthValidateAccessToken',
 
-  /***************************************************************************
-  *                                                                          *
-  * Here's an example of mapping some policies to run before a controller    *
-  * and its actions                                                          *
-  *                                                                          *
-  ***************************************************************************/
-	// RabbitController: {
+    OAuthController: {
+        '*' :  'OAuthValidateAccessToken',
+        token: 'OAuthPublicClient'
+    },
+    UsuarioController: {
+        //'*' : 'OAuthValidateAccessToken',
+        'register' : true,
+        //'verify/:email' : true
+        'verify' : true
+    },
+    ClienteController: {
+        '*' : 'OAuthValidateAccessToken',
+        //'register' : true,
+        // Para verificar el cliente se debe usar la verificación del UsuarioController
+        // con el paámetro ?client=true&code=CODE_TOKEN_CLIENTE
+        //'verify/:email' : true
+        //'verify' : true
+    },
+    IndexController: {
+        '*' : true
+    },
+    ArchivoController: {
+        'openFile' : true
+    }
 
-		// Apply the `false` policy as the default for all of RabbitController's actions
-		// (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
-		// '*': false,
+    /***************************************************************************
+     *                                                                          *
+     * Here's an example of mapping some policies to run before a controller    *
+     * and its actions                                                          *
+     *                                                                          *
+     ***************************************************************************/
+    // RabbitController: {
 
-		// For the action `nurture`, apply the 'isRabbitMother' policy
-		// (this overrides `false` above)
-		// nurture	: 'isRabbitMother',
+    // Apply the `false` policy as the default for all of RabbitController's actions
+    // (`false` prevents all access, which ensures that nothing bad happens to our rabbits)
+    // '*': false,
 
-		// Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
-		// before letting any users feed our rabbits
-		// feed : ['isNiceToAnimals', 'hasRabbitFood']
-	// }
+    // For the action `nurture`, apply the 'isRabbitMother' policy
+    // (this overrides `false` above)
+    // nurture	: 'isRabbitMother',
+
+    // Apply the `isNiceToAnimals` AND `hasRabbitFood` policies
+    // before letting any users feed our rabbits
+    // feed : ['isNiceToAnimals', 'hasRabbitFood']
+    // }
 };

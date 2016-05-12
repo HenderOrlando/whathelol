@@ -1,0 +1,174 @@
+
+<md-content
+    md-theme="solucionescucuta"
+    layout-fill
+    layout="column"
+    ng-class="{'layout-align-center-center': !admin.isAuthenticated}"
+>
+    <section
+        layout="row"
+        layout-align="center center"
+        ng-if="!admin.isAuthenticated"
+    >
+        <md-card
+            md-theme="solucionescucutablank"
+            ng-class="{'md-width-25': mdMedia('gt-md'), 'md-width-50': mdMedia('gt-sm'), 'md-width-75': !mdMedia('gt-sm')}"
+            layout-padding
+        >
+            <img
+                src="images/soluciones-cucuta.png"
+                alt="Soluciones Cúcuta"
+                title="Soluciones Cúcuta"
+                class="md-card-image"
+            />
+            <form ng-submit="admin.login.action()" method="post">
+                <md-content>
+                        <div layout="column" layout-align="center center">
+                            <md-input-container
+                                flex
+                                layout="row"
+                                class="md-width-100"
+                                ng-repeat="(key, field) in admin.login.fields"
+                            >
+                                <label>{{ ::field.label }}</label>
+                                <input
+                                    type="{{ ::field.type }}"
+                                    ng-model="admin.login.model[key]"
+                                />
+                            </md-input-container>
+                        </div>
+                </md-content>
+                <md-card-footer layout="row" layout-align="center center">
+                    <md-button
+                        type="submit"
+                        class="md-raised md-accent"
+                        aria-label="{{ ::admin.login.button.label }}"
+                    >
+                        <span>
+                            {{ ::admin.login.button.label }}
+                        </span>
+                    </md-button>
+                </md-card-footer>
+            </form>
+        </md-card>
+    </section>
+    <section
+        layout="row"
+        layout-fill
+        ng-if="admin.isAuthenticated"
+    >
+        <md-sidenav
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-disable-backdrop
+            md-whiteframe="4"
+        >
+            <md-toolbar>
+                <div class="md-toolbar-tools" layout="column">
+                    <img
+                        src="images/soluciones-cucuta.png"
+                        alt="Soluciones Cúcuta"
+                        title="Soluciones Cúcuta"
+                        class="logo"
+                    />
+                </div>
+            </md-toolbar>
+            <md-toolbar class="md-primary md-hue-1">
+                <div class="md-toolbar-tools" layout="column">
+                    <div layout="row" layout-margin>
+                        <form class="search" layout="column" ng-if="admin.search">
+                            <div layout="row" layout-align="center center">
+                                <md-input-container layout="row" flex class="md-accent md-hue-3">
+                                    <label>{{ ::admin.search.label }}</label>
+                                    <input ng-model="admin.search.query">
+                                </md-input-container>
+                            </div>
+                        </form>
+                        <md-button
+                            class="md-raised md-warn"
+                            ng-click="admin.salir()"
+                            aria-label="salir"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="exit-to-app"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                salir
+                            </span>
+                        </md-button>
+                    </div>
+                </div>
+            </md-toolbar>
+            <md-content
+                md-theme="solucionescucutablank"
+                flex
+                layout="column"
+                class="md-text-button-left"
+            >
+                <!--layout-align="center start"-->
+                <md-button
+                    md-theme="{{ menuactual.model === menu.model?'solucionescucuta':'solucionescucutablank' }}"
+                    ng-repeat="menu in admin.menus | filter:admin.search.filter"
+                    ui-sref="admin.resource({'resourcename': menu.model})"
+                    aria-label="{{ ::menu.plural}}"
+                    ng-class="{'md-raised md-accent': menuactual.nombre === menu.nombre }"
+                >
+                    <md-tooltip>
+                        {{ menu.descripcion }}
+                    </md-tooltip>
+                    <md-icon md-svg-icon="{{ menu.icon }}"></md-icon>
+                    <span>
+                        {{ ::menu.plural }}
+                    </span>
+                </md-button>
+            </md-content>
+        </md-sidenav>
+        <section
+            flex
+            ui-view
+            layout="column"
+            layout-fill
+        >
+            <md-card>
+                <md-toolbar
+                    class="md-primary md-hue-1 md-table-toolbar"
+                    ng-hide="adminresource.selected.length"
+                >
+                    <div class="md-toolbar-tools" layout="row">
+                        <md-button
+                            ng-if="!mdMedia('gt-md')"
+                            class="md-raised"
+                            ng-click="admin.toggleSidenav('left')"
+                            aria-label="{{ admin.isOpenSidenav('left')?'cerrar':'abrir' }}"
+                            ng-class="{'md-icon-button': !mdMedia('gt-sm')}"
+                        >
+                            <md-icon md-svg-icon="menu"></md-icon>
+                            <span ng-if="mdMedia('gt-sm')">
+                                menu
+                            </span>
+                        </md-button>
+                        <!--<div flex layout="column" layout-align="center end">
+                            <div layout="row">
+                                <md-button
+                                    class="md-raised md-primary"
+                                    ng-click="adminresource.addResource()"
+                                    aria-label="{{ ::menu.plural}}"
+                                >
+                                    agregar
+                                </md-button>
+                            </div>
+                        </div>-->
+                    </div>
+                </md-toolbar>
+                <md-content
+                    layout="column"
+                    md-theme="solucionescucutablank"
+                    flex
+                >
+                    Estadísticas
+                </md-content>
+            </md-card>
+        </section>
+    </section>
+</md-content>
+

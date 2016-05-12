@@ -1,0 +1,78 @@
+<md-dialog md-theme="{{ theme }}">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2 ng-if="listdialog.title">
+                {{ ::listdialog.title }}
+            </h2>
+            <span flex></span>
+            <md-button
+                class="md-icon-button"
+                ng-click="listdialog.close($event)"
+                aria-label="Cerrar"
+            >
+                <md-icon md-svg-icon="close" aria-label="Cerrar"></md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <md-list md-theme="solucionescucutablank">
+            <md-subheader layout="row">
+                <form
+                    ng-submit="listdialog.searchOpts($event)"
+                    layout="row"
+                    class="search"
+                >
+                    <md-input-container layout="row" flex>
+                        <label>
+                            {{ ::listdialog.search.label }}
+                        </label>
+                        <input
+                            ng-model="listdialog.search.model"
+                            ng-type="text"
+                        />
+                    </md-input-container>
+                    <md-button
+                        class="md-raised md-accent"
+                        aria-label="buscar"
+                        type="submit"
+                    >
+                        Buscar
+                    </md-button>
+                </form>
+            </md-subheader>
+            <md-list-item
+                ng-if="listdialog.attr.collection"
+                ng-repeat="item in listdialog.getOptions() | filter:listdialog.search.filter | orderBy:nombre:true"
+            >
+                <p>
+                    {{ ::item.nombre }}
+                </p>
+                <md-checkbox
+                    class="md-accent"
+                    ng-click="listdialog.onClick($event, item)"
+                    ng-model="listdialog.checklist[item.id]"
+                ></md-checkbox>
+            </md-list-item>
+            <md-radio-group
+                ng-if="listdialog.attr.model"
+                ng-model="listdialog.checklist"
+            >
+                <div
+                    ng-repeat="item in listdialog.getOptions() | filter:listdialog.search.filter | orderBy:nombre:true"
+                >
+                    <div flex layout="row" layout-align="start center" layout-padding>
+                        <div flex>
+                            {{ ::item.nombre }}
+                        </div>
+                        <md-radio-button
+                            ng-value="item.id"
+                            class="md-accent"
+                            aria-label="item.canonical"
+                            ng-click="listdialog.onClick($event, item)"
+                        ></md-radio-button>
+                    </div>
+                </div>
+            </md-radio-group>
+        </md-list>
+    </md-dialog-content>
+</md-dialog>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html ng-app="SolucionesCucutaApp">
+<head ng-controller="HtmlHeadCtrl as htmlhead">
+    <title if="!htmlhead.titleApp">
+        Soluciones Cúcuta
+    </title>
+    <title if="!!htmlhead.titleApp">
+        {{ htmlhead.titleApp }}
+    </title>
+
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <!-- Viewport mobile tag for sensible mobile support -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+
+    <!--
+        Stylesheets and Preprocessors
+        ==============================
+
+        You can always bring in CSS files manually with `<link>` tags, or asynchronously
+        using a solution like AMD (RequireJS).  Or, if you like, you can take advantage
+        of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+        By default, stylesheets from your `assets/styles` folder are included
+        here automatically (between STYLES and STYLES END). Both CSS (.css) and LESS (.less)
+        are supported. In production, your styles will be minified and concatenated into
+        a single file.
+
+        To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+        For example, here are a few things you could do:
+
+            + Change the order of your CSS files
+            + Import stylesheets from other directories
+            + Use a different or additional preprocessor, like SASS, SCSS or Stylus
+    -->
+
+    <!--STYLES-->
+    <link rel="stylesheet" href="/styles/dependencies/dist/sweetalert.css">
+    <link rel="stylesheet" href="/styles/dependencies/lib/codemirror.css">
+    <link rel="stylesheet" href="/styles/dependencies/angular-material.css">
+    <link rel="stylesheet" href="/styles/dependencies/angular-csp.css">
+    <link rel="stylesheet" href="/styles/dependencies/dist/md-data-table.css">
+    <link rel="stylesheet" href="/styles/dependencies/theme/yeti.css">
+    <link rel="stylesheet" href="/styles/importer.css">
+    <!--STYLES END-->
+</head>
+
+<body ng-cloak md-theme="{{ theme }}" layout-fill>
+<%- body %>
+<md-progress-linear class="load-progress" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+
+<!--
+    Client-side Templates
+    ========================
+
+    HTML templates are important prerequisites of modern, rich client applications.
+    To work their magic, frameworks like Backbone, Angular, Ember, and Knockout require
+    that you load these templates client-side.
+
+    By default, your Gruntfile is configured to automatically load and precompile
+    client-side JST templates in your `assets/templates` folder, then
+    include them here automatically (between TEMPLATES and TEMPLATES END).
+
+    To customize this behavior to fit your needs, just edit `tasks/pipeline.js`.
+    For example, here are a few things you could do:
+
+        + Import templates from other directories
+        + Use a different template engine (handlebars, jade, dust, etc.)
+        + Internationalize your client-side templates using a server-side
+          stringfile before they're served.
+-->
+
+<!--TEMPLATES-->
+<script type="text/javascript" src="/jst.js"></script>
+<!--TEMPLATES END-->
+
+
+<!--
+
+  Client-side Javascript
+  ========================
+
+  You can always bring in JS files manually with `script` tags, or asynchronously
+  on the client using a solution like AMD (RequireJS).  Or, if you like, you can
+  take advantage of Sails' conventional asset pipeline (boilerplate Gruntfile).
+
+  By default, files in your `assets/js` folder are included here
+  automatically (between SCRIPTS and SCRIPTS END).  Both JavaScript (.js) and
+  CoffeeScript (.coffee) are supported. In production, your scripts will be minified
+  and concatenated into a single file.
+
+  To customize any part of the built-in behavior, just edit `tasks/pipeline.js`.
+  For example, here are a few things you could do:
+
+      + Change the order of your scripts
+      + Import scripts from other directories
+      + Use a different preprocessor, like TypeScript
+
+-->
+
+<!--SCRIPTS-->
+<script src="/js/dependencies/sails.io.js"></script>
+<script src="/js/dependencies/lodash.js"></script>
+<script src="/js/dependencies/dist/jquery.js"></script>
+<script src="/js/dependencies/dist/sweetalert.min.js"></script>
+<script src="/js/dependencies/min/moment-with-locales.js"></script>
+<script src="/js/dependencies/tinymce.min.js"></script>
+<script src="/js/dependencies/jquery.tinymce.min.js"></script>
+<script src="/js/dependencies/lib/codemirror.js"></script>
+<script src="/js/dependencies/dist/api-check.js"></script>
+<script src="/js/dependencies/angular.js"></script>
+<script src="/js/dependencies/angular-resource.js"></script>
+<script src="/js/dependencies/dist/formly.js"></script>
+<script src="/js/dependencies/SweetAlert.js"></script>
+<script src="/js/dependencies/angular-aria.js"></script>
+<script src="/js/dependencies/angular-cookies.js"></script>
+<script src="/js/dependencies/angular-moment.js"></script>
+<script src="/js/dependencies/src/tinymce.js"></script>
+<script src="/js/dependencies/angular-animate.js"></script>
+<script src="/js/dependencies/angular-messages.js"></script>
+<script src="/js/dependencies/angular-sanitize.js"></script>
+<script src="/js/dependencies/ui-codemirror.js"></script>
+<script src="/js/dependencies/dist/uploader.js"></script>
+<script src="/js/dependencies/release/angular-ui-router.js"></script>
+<script src="/js/dependencies/angular-material.js"></script>
+<script src="/js/dependencies/src/sailsResource.js"></script>
+<script src="/js/dependencies/angular-mocks.js"></script>
+<script src="/js/dependencies/angular-translate.js"></script>
+<script src="/js/dependencies/angular-translate-loader-partial.js"></script>
+<script src="/js/dependencies/dist/formly-material.js"></script>
+<script src="/js/dependencies/dist/md-data-table.js"></script>
+<script src="/js/dependencies/dist/sails.io.js"></script>
+<script src="/js/dependencies/ng-file-upload.js"></script>
+<script src="/js/dependencies/ngStorage.js"></script>
+<script src="/js/dependencies/plugins/advlist/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/anchor/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/autolink/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/autoresize/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/autosave/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/bbcode/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/charmap/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/code/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/codesample/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/colorpicker/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/contextmenu/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/directionality/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/emoticons/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/fullpage/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/fullscreen/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/hr/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/image/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/imagetools/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/importcss/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/insertdatetime/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/layer/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/legacyoutput/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/link/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/lists/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/media/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/nonbreaking/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/noneditable/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/pagebreak/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/paste/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/preview/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/print/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/save/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/searchreplace/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/spellchecker/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/tabfocus/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/table/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/template/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/textcolor/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/textpattern/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/visualblocks/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/visualchars/plugin.min.js"></script>
+<script src="/js/dependencies/plugins/wordcount/plugin.min.js"></script>
+<script src="/js/dependencies/themes/modern/theme.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/constantsvalues.js"></script>
+<script src="/js/controllers/admin.js"></script>
+<script src="/js/controllers/adminedit.js"></script>
+<script src="/js/controllers/admineditdialog.js"></script>
+<script src="/js/controllers/adminresource.js"></script>
+<script src="/js/controllers/blog.js"></script>
+<script src="/js/controllers/dialog.js"></script>
+<script src="/js/controllers/htmlhead.js"></script>
+<script src="/js/controllers/index.js"></script>
+<script src="/js/controllers/lista.js"></script>
+<script src="/js/controllers/listdialog.js"></script>
+<script src="/js/controllers/pempodatetimepicker.js"></script>
+<script src="/js/controllers/pempofilemanager.js"></script>
+<script src="/js/controllers/publicaciones.js"></script>
+<script src="/js/controllers/toast.js"></script>
+<script src="/js/directives/affixer.js"></script>
+<script src="/js/directives/pempoDatetimeCalendar.js"></script>
+<script src="/js/directives/pempoDatetimeCalendarMonth.js"></script>
+<script src="/js/directives/pempoDatetimeClock.js"></script>
+<script src="/js/directives/pempoDatetimePicker.js"></script>
+<script src="/js/directives/pempoNoClick.js"></script>
+<script src="/js/directives/pempoPublicacion.js"></script>
+<script src="/js/directives/pempoSlide.js"></script>
+<script src="/js/directives/pempoSticky.js"></script>
+<script src="/js/factories/errorloadtranslate.js"></script>
+<script src="/js/factories/pempohttpinterceptor.js"></script>
+<script src="/js/factories/pemporesource.js"></script>
+<script src="/js/factories/templatecache.js"></script>
+<script src="/js/filters/joinby.js"></script>
+<script src="/js/filters/truncate.js"></script>
+<script src="/js/providers/pempoStorage.js"></script>
+<script src="/js/services/connect.js"></script>
+<script src="/js/services/crypto.js"></script>
+<script src="/js/services/pempoSocketsResource.js"></script>
+<!--SCRIPTS END-->
+
+<script src="http://localhost:35729/livereload.js"></script>
+
+</body>
+</html>

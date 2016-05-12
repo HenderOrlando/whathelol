@@ -1,0 +1,52 @@
+
+<div class="pempo-datetime-picker-clock">
+    <div class="pempo-datetime-picker-time-points">
+        <span ng-if="!points || points.length < 1">
+            &nbsp;
+        </span>
+        <div
+            layout-fill
+            layout-column
+            ng-repeat="point in points"
+            class="pempo-datetime-picker-time"
+            style="margin-left: {{point.left}}px; margin-top: {{point.top}}px;"
+        >
+            <!--style="margin-left: {{point.left}}px; margin-top: {{point.top}}px;"-->
+            <md-button
+                aria-label="{{point.display}}"
+                pempo-no-click
+                ng-class="{ 'md-raised md-accent md-hue-1': point.value === currentValue }"
+                class="pempo-datetime-picker-select-hour md-icon-button"
+                ng-click="setTime(point.value)"
+                ng-if="pointAvailable(point)"
+                ng-disabled="!pointAvailable(point)"
+            >
+                {{point.display}}
+            </md-button>
+            <md-button
+                aria-label="{{point.display}}"
+                pempo-no-click
+                class="disabled pempo-datetime-picker-select-hour md-icon-button"
+                ng-if="!pointAvailable(point)"
+                ng-disabled="!pointAvailable(point)"
+            >
+                {{point.display}}
+            </md-button>
+        </div>
+    </div>
+    <md-content
+        md-whiteframe="6"
+        md-theme="solucionescucuta"
+        class="pempo-datetime-picker-hand pempo-datetime-picker-hour-hand md-hue-1"
+    ></md-content>
+    <md-content
+        md-whiteframe="3"
+        md-theme="solucionescucuta"
+        class="pempo-datetime-picker-hand pempo-datetime-picker-minute-hand md-hue-1"
+    ></md-content>
+    <md-content
+        md-whiteframe="1"
+        md-theme="solucionescucuta"
+        class="pempo-datetime-picker-clock-center md-hue-2"
+    ></md-content>
+</div>

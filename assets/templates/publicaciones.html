@@ -1,0 +1,68 @@
+
+<md-toolbar
+    md-scroll-shrink
+    class="md-accent md-whiteframe-3dp"
+>
+    <div class="md-toolbar-tools md-overflow-y">
+        <div
+            flex
+            layout="row"
+            ng-class="{'layout-align-center-center': mdMedia('gt-sm')}"
+        >
+            <md-button
+                class="md-primary md-hue-3"
+                ng-repeat="menu in blog.menus"
+                ui-sref="blog.menu({'menuname': menu.canonical})"
+            >
+                {{ ::menu.nombre }}
+            </md-button>
+        </div>
+    </div>
+</md-toolbar>
+<md-grid-list
+    flex
+    md-cols="2"
+    md-cols-gt-sm="4"
+    md-row-height-gt-md="1:1"
+    md-row-height="4:3"
+    md-gutter="1px"
+    md-gutter-gt-sm="2px"
+>
+    <md-grid-tile
+        ng-repeat="pub in publicaciones.principales"
+        md-rowspan="{{ pub.span.row }}"
+        md-colspan="{{ pub.span.col }}"
+    >
+        <img
+            class="md-width-100"
+            ng-if="pub.archivo"
+            ng-src="{{ pub.archivo.src }}"
+        />
+        <md-grid-tile-footer>
+            <h3>{{ pub.nombre }}</h3>
+        </md-grid-tile-footer>
+    </md-grid-tile>
+</md-grid-list>
+<div layout="row">
+    <section
+        flex-offset-gt-md="10"
+        flex-offset-gt-sm="5"
+        flex="100"
+        ng-class="{'flex-gt-sm-55': publicaciones.lateral, 'flex-gt-sm-90': !publicaciones.lateral }"
+    >
+        <pempo-publicacion
+            publicaciones="publicaciones.publicaciones"
+        ></pempo-publicacion>
+    </section>
+    <section
+        ng-if="publicaciones.lateral"
+        ng-show="mdMedia('gt-sm')"
+        flex-offset-gt-md="10"
+        flex-offset-gt-sm="5"
+        flex-gt-sm="30"
+    >
+        <pempo-publicacion
+            publicaciones="publicaciones.lateral.publicaciones"
+        ></pempo-publicacion>
+    </section>
+</div>
