@@ -6,20 +6,7 @@
  */
 var Promise = require('bluebird'),
     promisify = Promise.promisify,
-    actionUtil = require('sails/lib/hooks/blueprints/actionUtil'),
-
-    fs = require('fs'),
-    path = require('path'),
-    ClientFtp = require('jsftp'),
-    pathUploads = '/uploads',
-    ftp = new ClientFtp({
-        host: 'ftp.camilopuello.com',
-        port: '21',
-        user: 'disk@solucionescucuta.com',
-        pass: '();g%eKpN5dQ'
-        //,debugMode: true // Se debe capturar el evento
-    }),
-    SkipperDisk = require('skipper-disk')
+    actionUtil = require('sails/lib/hooks/blueprints/actionUtil')
 ;
 
 module.exports = {

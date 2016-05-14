@@ -30,8 +30,8 @@ module.exports = {
         return new ClientFtp({
             host: 'ftp.camilopuello.com',
             port: '21',
-            user: 'disk@solucionescucuta.com',
-            pass: '();g%eKpN5dQ'
+            user: 'disk@whathelol.com',
+            pass: 'bF,L@]h9nQ[S'
             //,debugMode: true // Se debe capturar el evento
         })
     },

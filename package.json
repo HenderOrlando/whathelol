@@ -1,8 +1,8 @@
 {
-  "name": "soluciones Cúcuta",
+  "name": "Whathelol",
   "private": true,
   "version": "0.0.1",
-  "description": "Directorio de empresas según la geolocalozación del visitante",
+  "description": "Aplicación web y Blog para League Of Legends",
   "keywords": [
     "cms",
     "angular",
